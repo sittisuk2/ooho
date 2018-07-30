@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login | OHODiary</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Prompt:200,300,400,500,700">
+  <!-- Bulma Version 0.6.0 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css" />
+  <link rel="stylesheet" href="css/main.css">
+  <style media="screen">
+    .backgroundImage {
+      background-image: url('images/blog/w1.png')!important;
+      background-size: cover!important;
+      background-repeat: no-repeat!important;
+      background-position: center!important;
+    }
+    .g-recaptcha {
+      -webkit-transform: scale(0.77);
+        -moz-transform: scale(0.77);
+          -ms-transform: scale(0.77);
+          -o-transform: scale(0.77);
+              transform: scale(0.77);
+      -webkit-transform-origin: 0 0;
+          -moz-transform-origin: 0 0;
+          -ms-transform-origin: 0 0;
+            -o-transform-origin: 0 0;
+              transform-origin: 0 0;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero is-success is-fullheight backgroundImage">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <div class="column is-4 is-offset-4">
+          <div class="box">
+            <div class="formCenter">
+
+              <figure class="avatar">
+                <a href="index.html" title="back to home page">
+                  <img src="images/icon/logo.png">
+                </a>
+                <h3 class="title has-text-grey">Login</h3>
+              </figure>
+
+              <form>
+                <div class="field">
+                  <div class="control">
+                    <input class="input is-large" type="email" id="user" placeholder="Usernamel" autofocus="">
+                  </div>
+                </div>
+
+                <div class="field">
+                  <div class="control">
+                    <input class="input is-large" type="password" id="pass" placeholder="Password">
+                  </div>
+                </div>
+
+                <div class="field">
+                  <div class="control">
+                    <div class="g-recaptcha" data-sitekey="6LdPAmcUAAAAAGUYUQicVCl7CDrkhSIeBfgMBmV9"></div>
+                  </div>
+                </div>
+                <div class="field" style="text-align:right">
+                  <label class="checkbox" >
+                    <a href="#!" id="forget"><b>Forget Password</b></a>
+                  </label>
+                </div>
+                <a class="button is-block large-btn grean-lightgrean" onclick="signInWithProvider('login')">Login</a>
+              </form>
+              <hr>
+
+
+              <button class="button is-block loginBtn loginBtn--facebook is-large" onclick="signInWithProvider('facebook')">Login with <strong>Facebook</strong></button>
+              <button class="button is-block loginBtn loginBtn--twitter is-large" onclick="signInWithProvider('twitter')">Login with <strong>Twitter</strong></button>
+              <button class="button is-block loginBtn loginBtn--google is-large" onclick="signInWithProvider('google')">Login with <strong>Google +</strong></button>
+            </div>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.auth0.com/js/auth0/9.5.1/auth0.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="js/ServerTag.js"></script>
+<script src="js/helper.js"></script>
+<script src="js/providers.js"></script>
+<script src="env.js"></script>
+<script>
+
+  window.onload = function() {
+    webAuth.parseHash(function(err, authResult) {
+      if (authResult && authResult.accessToken && authResult.idToken) {
+        setSession(authResult)
+        var accessToken = localStorage.getItem('access_token')
+        
+        webAuth.client.userInfo(accessToken, function(err, profile) {
+        console.log('profile : ', profile)
+        if (profile) {
+          localStorage.setItem('profile', JSON.stringify(profile))
+          window.location.href = 'index.html'
+        }
+      });
+      }
+    })
+  }
+
+  function setSession(authResult) {
+    // Set the time that the Access Token will expire at
+    var expiresAt = JSON.stringify(
+      authResult.expiresIn * 1000 + new Date().getTime()
+    );
+    localStorage.setItem('access_token', authResult.accessToken);
+    localStorage.setItem('id_token', authResult.idToken);
+    localStorage.setItem('expires_at', expiresAt);
+  }
+
+  var webAuth = new auth0.WebAuth({
+    domain: env.AUTH0_DOMAIN,
+    clientID: env.AUTH0_CLIENT_ID,
+    // redirectUri: env.AUTH0_CALLBACK_URL,
+    redirectUri: env.AUTH0_CALLBACK_URL_PRODUCTION,
+    audience: 'https://' + env.AUTH0_DOMAIN + '/userinfo',
+    responseType: 'token id_token',
+    scope: 'openid profile email'
+  });
+
+  signInWithProvider = (id) => {
+    switch (id) {
+      case 'facebook':
+        // signinWithFacebook()
+        // console.log(signinWithFacebook());
+        
+        webAuth.authorize({
+          connection: 'facebook',
+        });
+        break;
+
+      case 'twitter':
+        // signinWithTwitter();
+        webAuth.authorize({
+          connection: 'twitter',
+        });
+        break;
+
+      case 'google':
+        // signinWithGoogle();
+        // console.log(signinWithGoogle());
+        webAuth.authorize({
+          connection: 'google-oauth2',
+        });
+        break;
+
+      default:
+        signinWithEmail(valueId('user'), valueId('pass'));
+
+        if(valueId('user') && valueId('pass')) {
+          setTimeout(() => {
+            locationHref('index.html');
+            resetId('user');
+            resetId('pass');
+          }, 1000)
+        }
+    }
+  }
+
+
+</script>

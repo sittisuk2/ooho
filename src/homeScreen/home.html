@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home | OHODiary</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Prompt:200,300,400,500,700">
+    <!-- Bulma Version 0.6.0 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css" />
+    <!-- slider version 2.3.1 -->
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="../../css/uploadfile.css">
+    <link rel="stylesheet" href="homeCss.css">
+    <style>
+      .btn {
+        border: none;
+        width: 62px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="hero is-info is-large">
+      <div id="menu">
+        <div class="hero-head">
+          <nav class="navbar">
+            <div class="container">
+              <div class="navbar-brand">
+                <a class="navbar-item hover-none-style" href="../../index.html">
+                  <img src="../../images/icon/logo-index.png" alt="Logo" style="width: 83px; margin-left: -12px;">
+                </a>
+                <span class="navbar-burger burger" data-target="navbarMenuHeroB">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </div>
+              <div id="navMenuTransparentExample" class="navbar-menu">
+                <div class="navbar-start">
+                  <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link brown padding__LeftRight" href="#!"> <!-- is-active -->
+                      Home
+                    </a>
+                  </div>
+                  <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link lightGreen padding__LeftRight" href="#!">
+                      OHO Calendar
+                    </a>
+                  </div>
+                  <div class="navbar-item has-dropdown is-hoverable">
+                    <a href="#!" class="navbar-link orange padding__LeftRight">
+                      All Topics
+                    </a>
+                  </div>
+                  <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link blue padding__LeftRight" href="#!">
+                      OHO Topic
+                    </a>
+                  </div>
+                </div>
+
+                <div id="navbarMenuHeroB" class="navbar-menu">
+                  <div class="navbar-end">
+                    <span class="navbar-item">
+                      <img src="../../images/icon/profile.png" alt="" style="width: 30px;margin-top: 5px;margin-right: 10px">
+                      <a class="is-inverted">
+                        <p class="font__colorBlack"><u><b id="username">loading...</b></u></p>
+                      </a>
+                    </span>
+                    <span class="navbar-item">
+                      <span class="line"></span>
+                      <a class="is-inverted">
+                        <img src="../../images/icon/Bell.png" alt="" style="width: 30px;margin-top: 5px;">
+                      </a>
+                    </span>
+                    <span class="navbar-item">
+                      <span class="line"></span>
+                      <a class="is-inverted" style="font-size: 26px;">
+                        <i class="fa fa-cog font__colorBlack" aria-hidden="true"></i>
+                      </a>
+                    </span>
+                    <span class="navbar-item">
+                      <span class="line"></span>
+                      <a class="is-inverted">
+                        <img src="../../images/language/thailand_square_sticker_640.png" alt="" style="width: 30px;margin-top: 5px;">
+                      </a>
+                    </span>
+                    <span class="navbar-item">
+                      <a class="is-inverted" style="font-size: 23px; margin-top: -5px">
+                        <i class="fa fa-search font__colorBlack" aria-hidden="true"></i>
+                      </a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <img src="https://cdn.beach-inspector.com/beach/1051/haad-yao-beach-58636054bd1c3.jpg?w=1900&h=550&fit=crop&q=50" alt="">
+    </section>
+
+     <section class="hero" style="background-color: #efefef">
+       <div class="hero-body first-body">
+         <div class="container">
+           <div class="columns">
+             <div class="column is-3">
+               <div class="frame_topic" id="frame_topic">
+                <!-- <img src="" id="image_topic" /> -->
+               </div>
+  
+               <div class="columns">
+                 <div class="column">
+                   <div class="content" style="text-align: center">
+                     <h1 id="fullname">loading... <br/>loading...</h1>
+                   </div>
+                   <div class="content" style="text-align: center">
+                     <div class="tooltip">
+                       <div class="tooltip-triangle"></div>
+                      ออกไปมองฟ้าและน้ำที่กว้างใหญ่
+                      ให้ได้กลิ่นดินที่ลมมันพัดเข้ามา
+                      โลกช่างกว้างใหญ่ เราเป็นแค่ใคร
+                     </div>
+                   </div>
+                 </div>
+               </div>
+  
+  
+               <div class="columns">
+                    <div class="column">
+                      <div class="content" style="text-align: center">
+                        <div class="tooltip grean-lightgrean colorWhite">
+                          <div class="columns">
+                            <div class="column is-1">
+                                <img src="../../images/icon/view-bye-icon.png" style="position: absolute; top: 23px; left: 10px; width:28px">
+                            </div>
+                            <div class="column is-11">
+                              <p style="font-weight:500;font-size: 14px;">All View <br> All Read</p>
+                            </div>
+                          </div>
+                          <div class="box-write-follow">
+                            101,986
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="column">
+                    <div class="content" style="text-align: center">
+                      <div class="tooltip yellow-orange colorWhite">
+                        <div class="columns">
+                          <div class="column is-4">
+                            <img src="../../images/icon/view-people-icon.png" style="position: absolute; top: 19px; left: 9px; width:28px">
+                          </div>
+                          <div class="column is-6">
+                            <p style="text-align: left;font-weight:500;font-size: 14px;">Fan <br> Follower</p>
+                          </div>
+                        </div>
+                      <div class="box-write-follow"> 450 </div>
+                    </div>
+                   </div>
+                 </div>
+               </div>
+  
+               <div class="columns">
+                  <div class="column">
+                    <div class="content" style="text-align: center">
+                      <button class="tooltip dark-blue colorWhite" onClick="location.href='../backendScreen/backend.html'" style="width:100%;cursor: pointer;font-size: 20px;">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>  <b>Write</b> Travals
+                      </button>
+                    </div>
+                  </div>
+               </div>
+             </div>
+  
+             <div class="column is-9">
+                <div id="elementCard"></div>
+
+                <div class="card">
+                  <div class="card-image">
+                    <h2 class="textHeader">14 Oct 2017</h2>
+                    <figure class="image is-4by3">
+                      <img src="https://wallpaper.campus-star.com/app/uploads/2016/08/view1159147.jpg" alt="Placeholder image">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+
+                    <div class="content">
+                      <h1>Lorem</h1>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                      <a href="#">#css</a> <a href="#">#responsive</a>
+                      <br>
+                      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                      <p>
+                        <span style="font-weight: 700">
+                          <img src="../../images/icon/view-icon.png"/>
+                          <span style="position: relative;bottom: 6px;">20,115</span>
+                        </span>
+                        <span style="font-weight: 700">
+                          <img src="../../images/icon/like-icon.png"/>
+                          <span style="position: relative;bottom: 10px;">1,480</span>
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </section>
+
+    <Footer id="foo"></Footer>
+  </body>
+</html>
+<script src="../../js/ServerTag.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="../../js/helper.js"></script>
+<script type="text/javascript">
+  window.onload = () => {
+    document.getElementById('foo').innerHTML = Footer()
+    getPostData()
+    getProfile()
+
+    
+  }
+
+  const dropdown = () => {
+    var dropdown = document.querySelector('.dropdown');
+      dropdown.classList.toggle('is-active');
+  }
+
+  const logout = () => {
+    localStorage.clear()
+    window.location.href = "../../index.html"
+    // window.location.reload()
+  }
+
+  const getProfile = () => {
+    const profile = JSON.parse(localStorage.getItem('profile'))
+    if (profile) {
+      const Data = getEleMenuActiveUser(profile.given_name, profile.picture)
+      document.getElementById('menu').innerHTML = Data
+      cardProfile(profile.picture, profile.given_name, profile.family_name)
+    }
+  }
+
+  const cardProfile = (p, n, s) => {
+    document.getElementById('frame_topic').style.backgroundImage = `url('${p}')`
+    document.getElementById('fullname').innerHTML = `${n}<br /> <b>${s}</b>`
+  }
+
+  const getEleMenuActiveUser = (name, picture) => `
+      <div class="hero-head">
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-brand">
+              <a class="navbar-item hover-none-style" href="../../index.html">
+                <img src="../../images/icon/logo-index.png" alt="Logo" style="width: 83px; margin-left: -12px;">
+              </a>
+              <span class="navbar-burger burger" data-target="navbarMenuHeroB">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </div>
+            <div id="navMenuTransparentExample" class="navbar-menu">
+              <div class="navbar-start">
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link brown padding__LeftRight" href="#!"> <!-- is-active -->
+                    Home
+                  </a>
+                </div>
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link lightGreen padding__LeftRight" href="#!">
+                    OHO Calendar
+                  </a>
+                </div>
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <a href="#!" class="navbar-link orange padding__LeftRight">
+                    All Topics
+                  </a>
+                </div>
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link blue padding__LeftRight" href="#!">
+                    OHO Topic
+                  </a>
+                </div>
+              </div>
+
+              <div id="navbarMenuHeroB" class="navbar-menu">
+                <div class="navbar-end">
+                  <span class="navbar-item">
+                    <img src="${picture}" alt="" style="width: 30px;margin-top: 5px;margin-right: 10px">
+                    <a class="is-inverted">
+                      <p class="font__colorBlack"><u><b id="username">${name}</b></u></p>
+                    </a>
+                  </span>
+                  <span class="navbar-item" style="margin-right: -6px;">
+                    <span class="line"></span>
+                    <a class="is-inverted">
+                      <img src="../../images/icon/Bell.png" alt="" style="width: 30px;margin-top: 5px;">
+                    </a>
+                  </span>
+                  <div class="dropdown">
+                    <div class="dropdown-menu" id="dropdown-menu2" role="menu">
+                      <div class="dropdown-content">
+                        <!-- <div class="dropdown-item">
+                          <p>You can insert <strong>any type of content</strong> within the dropdown menu.</p>
+                        </div>
+                        <hr class="dropdown-divider"> -->
+                        <a href="#" onclick="console.log('edit profile')" class="dropdown-item">
+                          Edit Profile
+                        </a> 
+                        <hr class="dropdown-divider">
+                        <a href="#" onclick="logout()" class="dropdown-item">
+                          <font color="red"><b>Log out</b></font>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <button onclick="dropdown()" class="btn" aria-haspopup="true" aria-controls="dropdown-menu2">
+                    <span class="navbar-item">
+                      <span class="line"></span>
+                      <a class="is-inverted" style="font-size: 26px;">
+                        <i class="fa fa-cog font__colorBlack" aria-hidden="true"></i>
+                      </a>
+                    </span>
+                  </button>
+                  
+                  <span class="navbar-item">
+                    <span class="line"></span>
+                    <a class="is-inverted">
+                      <img src="../../images/language/thailand_square_sticker_640.png" alt="" style="width: 30px;margin-top: 5px;">
+                    </a>
+                  </span>
+                  <span class="navbar-item">
+                    <a class="is-inverted" style="font-size: 23px; margin-top: -5px">
+                      <i class="fa fa-search font__colorBlack" aria-hidden="true"></i>
+                    </a>
+                  </span>
+                </div>
+              </div>
+
+              
+
+            </div>
+          </div>
+        </nav>
+      </div>
+  `
+
+  
+
+  const getElementCardFunc = (id, title, viewCount, startTravel) => `
+    <div class="card">
+      <div class="card-image">
+        <h2 class="textHeader">${getFormatDate(startTravel)}</h2>
+        <figure class="image is-4by3">
+          <img src="http://www.thaifly.com/image/data/picture_acticle/picture_acticle_Australia/thaifly_Australia-7.jpg" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="card-content">
+
+        <div class="content">
+          <a href="../topicScreen/topic.html#${id}"><h1 style="cursor: pointer">${title}</h1></a>
+          null
+          <br>
+          <time datetime="2016-1-1">null</time>
+          <p>
+            <span style="font-weight: 700">
+              <img src="../../images/icon/view-icon.png"/>
+              <span style="position: relative;bottom: 6px;">${getFormatNumber(viewCount)}</span>
+            </span>
+            <span style="font-weight: 700">
+              <img src="../../images/icon/like-icon.png"/>
+              <span style="position: relative;bottom: 10px;">null</span>
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  `
+
+  const getPostData = () => {
+    $.ajax({
+      url: config.connectServer.linkServ,
+      type: 'GET',
+      dataType: 'json',
+      success: function(data) {
+        console.log(data)
+        let info = '';
+        data.forEach((d) => info+=getElementCardFunc(d.id, d.title, d.viewCount, d.startTravel))
+        document.getElementById('elementCard').innerHTML = info
+      },
+      error: function (xhr, ajaxOptions, thrownError) {
+        if (xhr.status <= 0) {
+          let status = confirm('Are you make sure trust certification!! Browser')
+          if (status) {
+            window.location.href = config.connectServer.linkServ
+          } else {
+            alert('You can not see the content because browser of you are stuck not certification "TRUST CERTIFICATION" please')
+          }
+        }
+      }
+    })
+    .always((jqXHROrData, textStatus, jqXHROrErrorThrown) =>    {
+      console.log(`In completion: textStatus is: ${textStatus}`);
+    })
+  }
+</script>

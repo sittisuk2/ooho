@@ -1,0 +1,109 @@
+.columns:last-child { margin-bottom: 18px; }
+.social { margin-bottom: -30px; }
+.social .social-facebook-icon {     width: 40px; margin-top: 8px; }
+.social .social-twitter-icon  {     width: 40px; margin-top: 0px; }
+.card-content {
+  background-color: #f8f8f8;
+  padding: 10px;
+  overflow: hidden;
+}
+.card-content-hight {
+  height: 111px!important;
+}
+
+.card-modify {
+  background-color: #fff!important;
+  -webkit-box-shadow: none;
+  box-shadow: none!important;
+}
+
+.card-content-modify {
+  overflow: hidden;
+  padding: 0!important;
+  padding-top: 5px!important;
+  padding-bottom: 25px!important;
+}
+
+.writer-like-icon {
+  position: relative;
+  right: -80px;
+  top: -34px;
+  width: 10em;
+  font-weight: 700
+}
+.is-pulled-right {
+    float: none!important;
+}
+.footer { background-color: #3c3c3c; color: white; font-weight: 700; padding: 1px 20px; height: 93px; }
+.images310x170 {
+  width: 310px;
+  height: 170px;
+}
+.imagesHeight150 {
+  height: 150px;
+}
+
+
+@media only screen and (min-width: 1000px) {
+  .images310x170 {
+    /* width: 310px!important; */
+    height: 170px!important;
+  }
+}
+
+@media only screen and (min-width: 1216px) {
+    .container {
+        max-width: 1016px!important;
+        width: 1152px;
+    }
+
+    .social .social-facebook-icon {
+      right: 26px!important;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    /* .column.is-3, .column.is-3-tablet {
+        -webkit-box-flex: 0;
+        -ms-flex: none;
+        flex: none;
+        width: 26.2%;
+    }
+    .column.is-2, .column.is-2-tablet {
+        -webkit-box-flex: 0;
+        -ms-flex: none;
+        flex: none;
+        width: 23.66667%;
+    } */
+
+    .card-content-hight {
+      height: 157px!important;
+    }
+    .is-pulled-right {
+      float: right!important;
+    }
+
+    .card-content-modify {
+      overflow: hidden;
+      padding: 0!important;
+      padding-top: 16px!important;
+      padding-bottom: 0px!important;
+    }
+
+
+    .writer-like-icon {
+      position: relative;
+      right: 60px;
+      top: 10px;
+      min-width: 9em;
+      font-weight: 700
+    }
+
+    .footer {
+      color: white;
+      background-color: #3c3c3c;
+      padding: 1px 20px;
+      font-weight: 700;
+      height: 57px;
+    }
+}

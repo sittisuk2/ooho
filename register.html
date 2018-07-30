@@ -1,0 +1,153 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register | OHODiary</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Prompt:200,300,400,500,700">
+  <!-- Bulma Version 0.6.0 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/uploadfile.css">
+  <style media="screen">
+    .backgroundImage {
+      background-image: url('images/blog/w1.png')!important;
+      background-size: cover!important;
+      background-repeat: no-repeat!important;
+      background-position: center!important;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero is-success is-fullheight backgroundImage">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <div class="column is-8 is-offset-2">
+          <!-- <p class="subtitle has-text-grey">Please login to proceed.</p>-->
+          <div class="box">
+            <figure class="avatar">
+              <a href="index.html" title="back to home page">
+                <img src="images/icon/logo.png">
+              </a>
+              <h3 class="title has-text-grey">Register</h3>
+            </figure>
+
+            <div class="columns">
+              <div class="column">
+                <div class="panel">
+                  <div class="panel-content">
+                    <label for="image">
+                      <form action="" class="image-select" data-droppable="">
+                        <input id="image" type="file" data-droppable-input=""/>
+                        <i class="fa fa-camera fa-2x image-select__icon"></i>
+                        <div class="image-select__message"></div>
+                        <div class="bg-image aspect-square"
+                             style="background-image: url('images/blog/register.png');" data-droppable-image=""></div>
+                      </form>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <p class="agreements">Select the size should be greater than 180 * 180 <br>the size should be less than 5M</p>
+                </div>
+
+                <button class="button is-block loginBtn loginBtn--facebook is-large">Register With <strong>Facebook</strong></button>
+                <button class="button is-block loginBtn loginBtn--twitter is-large">Register With <strong>Twitter</strong></button>
+                <button class="button is-block loginBtn loginBtn--google is-large">Register With <strong>Google +</strong></button>
+              </div>
+              <div class="column">
+                <form>
+                  <div class="field">
+                    <div class="control">
+                      <input class="input is-large" type="text" placeholder="Usernamel" autofocus="">
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <div class="control">
+                      <input class="input is-large" type="password" placeholder="Password">
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <div class="control">
+                      <input class="input is-large" type="password" placeholder="Password Confirm" >
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <div class="control">
+                      <p class="agreement">* รหัสผ่านภาษาอังกฤษอย่างน้อย 8 ตัวและต้องมีตัวเลข</p>
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <div class="control">
+                      <input class="input is-large" type="text" placeholder="ชื่อ">
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <div class="control">
+                      <input class="input is-large" type="email" placeholder="Email" >
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <div class="control">
+                      <input class="input is-large" type="number" placeholder="เบอร์โทร">
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <div class="columns">
+                      <div class="column">
+                        <select id="day">
+                          <option selected disabled>วันเกิด</option>
+                          <option>1</option>
+                          <option>2</option>
+                        </select>
+                      </div>
+                      <div class="column">
+                        <select>
+                          <option selected disabled>เดือน</option>
+                          <option>มกราคม</option>
+                          <option>กุมภาพันธ์</option>
+                        </select>
+                      </div>
+                      <div class="column">
+                        <select>
+                          <option selected disabled>ปี</option>
+                          <option>1996</option>
+                          <option>1995</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="field" style="text-align:left;margin-top:3.3em;">
+                    <label class="checkbox" >
+                      <input type="checkbox" class="agreement"> ฉันได้อ่านและยอมรัก<a class="want" href="#test">ข้อกำหนดและเงื่อนไข</a>ดังกล่าว
+                    </label>
+                  </div>
+
+                  <a class="button is-block large-btn grean-lightgrean">Register</a>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </body>
+</html>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script async type="text/javascript" src="js/imagechooser.js"></script>
+<script src="js/ServerTag.js"></script>
+<script src="js/helper.js"></script>
+<script src="js/providers.js"></script>

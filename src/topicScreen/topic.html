@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Topic | OHODiary</title>
+    <link rel="stylesheet" href="topicCss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Prompt:200,300,400,500,700">
+    <!-- Bulma Version 0.6.0 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css" />
+    <!-- slider version 2.3.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/PgwSlider/2.3.1/pgwslider.min.css">
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="../../css/uploadfile.css">
+    
+    <!-- Begin emoji-picker Stylesheets -->
+    <link href="../../lib/emojiPicker/lib/css/emoji.css" rel="stylesheet">
+    <!-- End emoji-picker Stylesheets -->
+  </head>
+  <style>
+    .btn {
+      border: none;
+      width: 62px;
+    }
+  </style>
+
+  <body>
+    <section class="hero is-info is-large">
+      <div id="menu">
+        <div class="hero-head">
+          <nav class="navbar">
+            <div class="container">
+              <div class="navbar-brand">
+                <a class="navbar-item hover-none-style" href="../../index.html">
+                  <img src="../../images/icon/logo-index.png" alt="Logo" style="width: 83px; margin-left: -12px;">
+                </a>
+                <span class="navbar-burger burger" data-target="navbarMenuHeroB">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </div>
+              <div id="navMenuTransparentExample" class="navbar-menu">
+                <div class="navbar-start">
+                  <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link brown padding__LeftRight" href="#!"> <!-- is-active -->
+                      Home
+                    </a>
+                  </div>
+                  <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link lightGreen padding__LeftRight" href="#!">
+                      OHO Calendar
+                    </a>
+                  </div>
+                  <div class="navbar-item has-dropdown is-hoverable">
+                    <a href="#!" class="navbar-link orange padding__LeftRight">
+                      All Topics
+                    </a>
+                  </div>
+                  <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link blue padding__LeftRight" href="#!">
+                      OHO Topic
+                    </a>
+                  </div>
+                </div>
+
+                <div id="navbarMenuHeroB" class="navbar-menu">
+                  <div class="navbar-end">
+                    <span class="navbar-item">
+                      <img src="../../images/icon/profile.png" alt="" style="width: 30px;margin-top: 5px;margin-right: 10px">
+                      <a class="is-inverted">
+                        <p class="font__colorBlack"><u><b id="username">loading...</b></u></p>
+                      </a>
+                    </span>
+                    <span class="navbar-item">
+                      <span class="line"></span>
+                      <a class="is-inverted">
+                        <img src="../../images/icon/Bell.png" alt="" style="width: 30px;margin-top: 5px;">
+                      </a>
+                    </span>
+                    <span class="navbar-item">
+                      <span class="line"></span>
+                      <a class="is-inverted" style="font-size: 26px;">
+                        <i class="fa fa-cog font__colorBlack" aria-hidden="true"></i>
+                      </a>
+                    </span>
+                    <span class="navbar-item">
+                      <span class="line"></span>
+                      <a class="is-inverted">
+                        <img src="../../images/language/thailand_square_sticker_640.png" alt="" style="width: 30px;margin-top: 5px;">
+                      </a>
+                    </span>
+                    <span class="navbar-item">
+                      <a class="is-inverted" style="font-size: 23px; margin-top: -5px">
+                        <i class="fa fa-search font__colorBlack" aria-hidden="true"></i>
+                      </a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <img src="../../images/Image_header.png" alt="">
+
+    </section>
+
+
+    <section class="hero">
+        <div id="header_topic">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-3" style="padding-left: 3em;">
+                        <div class="frame_topic">
+                            <img src="../../images/profile.png" id="image_topic" />
+                        </div>
+                    </div>
+                    <div class="column is-6" style="margin-bottom: -70px;">
+                      <div class="topic_headerText">
+                        <div class="topic topic_headerTop" id="titleID">
+                            loading...
+                        </div>
+                        <div class=" topic topic_headerBottom">
+                          <u>Tommy โลกสีเทา</u> • <i class="fa fa-users" aria-hidden="true"></i>
+                          <span style="font-size: 12px;font-weight: 500;">Fan Follower</span>
+                          <span style="font-size: 16px;margin-left: 1px;">2,350</span>
+                          <div style="margin-bottom: -20px;"></div>
+                          <br/>
+                          <i class="fa fa-calendar" aria-hidden="true"></i>
+                          <span style="font-size: 12px;font-weight: 500;">Date</span>
+                          <span style="
+                              color: #747674;
+                              font-size: 14px;
+                              font-weight: 400;
+                              margin-left: 1px;" id="createDateID">loading...</span>
+
+                          <span style="font-weight: 500">
+                              <img src="../../images/icon/view-icon.png" style="width: 70px;"/>
+                              <span style="position: relative;bottom: 6px;" id="viewCountID">loading...</span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="column is-3" style="padding-top: 9em;">
+                      <button class="tooltip yellow-orange colorWhite" style="width:100%;cursor: pointer;font-size: 20px;">
+                          <i class="fa fa-share-alt" aria-hidden="true"></i>  <b>Share</b> Travals
+                      </button>
+                    </div>
+                </div>
+                
+                
+                <div class="columns">
+                  <div class="column is-9">
+                    <div class="frame">
+                      <div class="columns" style="margin-bottom: 0!important">
+                        <div class="column is-5">
+                          <div class="boxing">
+                            <img src="../../images/icon/start-travel-icon.png" class="img" />
+                            <span class="content" id="startTravelID">loading...</span>
+                          </div>
+                        </div>
+                        <div class="column is-4">
+                          <div class="boxing">
+                            <img src="../../images/icon/travel-days-icon.png" class="img" />
+                            <span class="content" id="travelDayID">loading...</span>
+                          </div>
+                        </div>
+                        <div class="column is-2">
+                          <div class="boxing">
+                            <img src="../../images/icon/people-icon.png" class="img" />
+                            <span class="content" id="whoWithID" style="right: -50px">loading</span>
+                          </div>
+                        </div>                        
+                      </div>
+                    </div>
+                      
+                  </div>
+                  <!-- linear-gradient(to bottom, #ad7741 0%, #6d4319 100%); -->
+                </div>
+            </div>      
+        </div>
+
+      
+      <div class="hero-body first-body" style="margin-top: -30px;">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-9">
+              
+
+              <div id="contentId"></div>
+
+              <br/><br/>
+              <center>
+                <button class="tooltip yellow-orange colorWhite" style="width:200px;cursor: pointer;font-size: 20px;" onclick="alert('share')">
+                  <i class="fa fa-share-alt" aria-hidden="true"></i>  <b>Share</b> Travals
+                </button>
+              </center>
+              <hr>
+              
+              <div class="columns" style="margin-bottom: -10px;">
+                <div class="column">
+                  <div class="columns">
+                    <div class="column is-2">
+                      <figure class="image is-48x48">
+                        <img src="../../images/writer/writer-3.png" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="column is-10">
+                      <p><u>Dirat Tang</u></p>
+                      <i class="fa fa-calendar" aria-hidden="true"></i>
+                      <span style="font-weight:500">Date</span> 22 / 10 / 2017 10.33 น.
+                    </div>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="columns">
+                    <div class="column is-12" style="position: relative; height: 70px;">
+                      <div style="position: absolute; bottom: 0; right: 4px;width: 170px;">
+                        <div class="columns">
+                          <div class="column is-6" style="cursor: pointer;">
+                            <i class="fa fa-times-circle-o" aria-hidden="true"></i> <span style="font-weight:500"><u>Report</u></span>
+                          </div>
+                          <div class="column is-6" style="position: relative; cursor: pointer;">
+                            <div class="line"></div>
+                            <span style="font-weight:500"><u>Reply</u></span> <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                          </div>                            
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div href="#" class="up-arrow">Button with Up Arrow</div>
+
+              <div class="columns" style="margin-bottom: -10px;">
+                <div class="column">
+                  <div class="columns">
+                    <div class="column is-2">
+                      <figure class="image is-48x48">
+                        <img src="../../images/writer/writer-2.png" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="column is-10">
+                      <p><u>Amnart Niramituomtip</u></p>
+                      <i class="fa fa-calendar" aria-hidden="true"></i>
+                      <span style="font-weight:500">Date</span> 22 / 10 / 2017 10.33 น.
+                    </div>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="columns">
+                    <div class="column is-12" style="position: relative; height: 70px;">
+                      <div style="position: absolute; bottom: 0; right: 4px;width: 170px;">
+                        <div class="columns">
+                          <div class="column is-6" style="cursor: pointer;">
+                            <i class="fa fa-times-circle-o" aria-hidden="true"></i> <span style="font-weight:500"><u>Report</u></span>
+                          </div>
+                          <div class="column is-6" style="position: relative; cursor: pointer;">
+                            <div class="line"></div>
+                            <span style="font-weight:500"><u>Reply</u></span> <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                          </div>                            
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div href="#" class="up-arrow">Button with Up Arrow</div>
+  
+
+              <!-- writer reply -->
+              <div class="columns">
+                <div class="column is-1">
+                  <!-- null -->
+                </div>
+                <div class="column is-11">
+                  <div class="columns" style="margin-bottom: -10px;">
+                    <div class="column">
+                      <div class="columns">
+                        <div class="column is-2">
+                          <figure class="image is-48x48">
+                            <img src="../../images/writer/writer-1.png" alt="Placeholder image">
+                          </figure>
+                        </div>
+                        <div class="column is-10" >
+                          <p style="float:left">
+                            <u>Tommy โลกสีเทา</u> 
+                            <div class="cycle"></div>
+                          </p>
+                          <br/>
+                          <i class="fa fa-calendar" aria-hidden="true"></i>
+                          <span style="font-weight:500">Date</span> 22 / 10 / 2017 10.33 น.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="column">
+                      <div class="columns">
+                        <div class="column is-12" style="position: relative; height: 70px;">
+                          <div style="position: absolute; bottom: 0; right: 4px;width: 170px;">
+                            <div class="columns">
+                              <div class="column is-6" style="cursor: pointer;">
+                                <i class="fa fa-times-circle-o" aria-hidden="true"></i> <span style="font-weight:500"><u>Report</u></span>
+                              </div>
+                              <div class="column is-6" style="position: relative; cursor: pointer;">
+                                <div class="line"></div>
+                                <span style="font-weight:500"><u>Reply</u></span> <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                              </div>                            
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div href="#" class="up-arrow-reply" style="background-color: #f4fbe3">Button with Up Arrow</div>
+                </div>
+              </div>
+
+              <hr>
+
+
+              <div class="columns" style="margin-bottom: -10px;">
+                <div class="column">
+                  <div class="columns">
+                    <div class="column is-2">
+                      <figure class="image is-48x48">
+                        <img src="../../images/writer/writer-1.png" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="column is-10">
+                      <p><u>Tommy โลกสีเทา</u></p>
+                      <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                      <span style="font-weight:500">Reply</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="columns">
+                    <div class="column is-12" style="position: relative; height: 70px;">
+                      <div style="position: absolute; bottom: 0; right: 4px;">
+                        <div class="columns">
+                          <div class="column is-6" style="cursor: pointer;width:92px">
+                            <!-- <img src="../../images/icon/smiling.png" alt="" style="position: absolute;bottom: 0;"> -->
+                          </div>                            
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tooltip-triangle">
+                <textarea name="comment" id="comment" cols="123" rows="5" maxlength="50" placeholder="Write Your Comment .." data-emojiable="true"></textarea>
+              </div>
+
+              <div style="float: left; margin-top: 40px">
+                <p style="font-size: 12px">Can input <span style="color:red">50</span> words</p>
+              </div>
+              
+              <div style="float: right; margin-top: 40px">
+                <button class="tooltip grean-lightgrean colorWhite" style="width:200px;cursor: pointer;font-size: 20px;" onclick="alert('share')">
+                    <i class="fa fa-commenting-o" aria-hidden="true"></i>  <b>Post</b> Reply
+                </button>
+              </div>
+            </div>
+
+    
+            <div class="column is-3">
+              <div class="columns">
+                <div class="column is-2">
+                  <div class="triangle__Right"></div>
+                </div>
+                <div class="column">
+                  <div style="font-size: 20px; font-weight:bold; text-align: center">
+                    Related Travels
+                  </div>
+                </div>
+                <div class="column is-2">
+                  <div class="triangle__Left"></div>
+                </div>
+              </div>
+
+              <div class="columns">
+                <div class="column">
+                  <div class="card-modify">
+                    <div class="card-image">
+                      <figure class="image is-2by1">
+                        <img src="../../images/blog/img-3.png" class="../../imagesHeight150" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="card-content-modify">
+                      <div class="media-content">
+                        <p class="p is-4 font__prompt">สปอร์ตจิตพิสัย ช็อคตัวตนฮองเฮา ...</p>
+                      </div>
+                      <div class="media">
+                        <div class="content">
+                          <p style="font-weight: 700; width: 100%">
+                            <span>
+                              <img src="../../images/icon/view-icon.png" style="width: 25%"/>
+                              <span style="position: relative;bottom: 3px;font-size: 14px">17,001</span>
+                            </span>
+                            <span style="margin-left: 10px;">
+                              <img src="../../images/icon/like-icon.png" style="width: 25%; position:relative;bottom: -3px;"/>
+                              <span style="position: relative;bottom: 3px;font-size: 14px">2,047</span>
+                            </span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="columns" style="margin-top: 20px">
+                  <div class="column is-2">
+                    <div class="triangle__Right"></div>
+                  </div>
+                  <div class="column">
+                    <div style="font-size: 20px; font-weight:bold; text-align: center">
+                      OHO Topic
+                    </div>
+                  </div>
+                  <div class="column is-2">
+                    <div class="triangle__Left"></div>
+                  </div>
+                </div>
+  
+                <div class="columns">
+                  <div class="column">
+                    <div class="card-modify">
+                      <div class="card-image">
+                        <figure class="image is-2by1">
+                          <img src="../../images/blog/oho-3.png" class="../../imagesHeight150" alt="Placeholder image">
+                        </figure>
+                      </div>
+                      <div class="card-content-modify">
+                        <div class="media-content">
+                          <p class="p is-4 font__prompt">สปอร์ตจิตพิสัย ช็อคตัวตนฮองเฮา ...</p>
+                        </div>
+                        <div class="media">
+                          <div class="content">
+                            <p style="font-weight: 700; width: 100%">
+                              <span>
+                                <img src="../../images/icon/view-icon.png" style="width: 25%"/>
+                                <span style="position: relative;bottom: 3px;font-size: 14px">17,001</span>
+                              </span>
+                              <span style="margin-left: 10px;">
+                                <img src="../../images/icon/like-icon.png" style="width: 25%; position:relative;bottom: -3px;"/>
+                                <span style="position: relative;bottom: 3px;font-size: 14px">2,047</span>
+                              </span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Footer id="foo"></Footer>
+  </body>
+</html>
+<script src="../../js/ServerTag.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- Begin emoji-picker JavaScript -->
+<script src="../../lib/emojiPicker/lib/js/config.js"></script>
+<script src="../../lib/emojiPicker/lib/js/util.js"></script>
+<script src="../../lib/emojiPicker/lib/js/jquery.emojiarea.js"></script>
+<script src="../../lib/emojiPicker/lib/js/emoji-picker.js"></script>
+<!-- End emoji-picker JavaScript -->
+
+<script src="../../js/helper.js"></script>
+
+<script>
+  window.onload = function() {
+    window.emojiPicker = new EmojiPicker({
+      emojiable_selector: '[data-emojiable=true]',
+      assetsPath: '../../lib/emojiPicker/lib/img/',
+      popupButtonClasses: 'fa fa-smile-o'
+    });
+    window.emojiPicker.discover();
+
+    loaddataset()
+    document.getElementById('foo').innerHTML = Footer()
+    getProfile()
+  }
+
+  $('.share').click(() => alert('ok'))
+
+  const onGetUrl = () => {
+    return location.href.split('#')[1]
+  }
+
+  const getProfile = () => {
+    const profile = JSON.parse(localStorage.getItem('profile'))
+    if (profile) {
+      document.getElementById('menu').innerHTML = getEleMenuActiveUser(profile.given_name, profile.picture)
+    }
+  }
+
+  const getEleMenuActiveUser = (name, picture) => `
+      <div class="hero-head">
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-brand">
+              <a class="navbar-item hover-none-style" href="../../index.html">
+                <img src="../../images/icon/logo-index.png" alt="Logo" style="width: 83px; margin-left: -12px;">
+              </a>
+              <span class="navbar-burger burger" data-target="navbarMenuHeroB">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </div>
+            <div id="navMenuTransparentExample" class="navbar-menu">
+              <div class="navbar-start">
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link brown padding__LeftRight" href="../homeScreen/home.html"> <!-- is-active -->
+                    Home
+                  </a>
+                </div>
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link lightGreen padding__LeftRight" href="#!">
+                    OHO Calendar
+                  </a>
+                </div>
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <a href="#!" class="navbar-link orange padding__LeftRight">
+                    All Topics
+                  </a>
+                </div>
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link blue padding__LeftRight" href="#!">
+                    OHO Topic
+                  </a>
+                </div>
+              </div>
+
+              <div id="navbarMenuHeroB" class="navbar-menu">
+                <div class="navbar-end">
+                  <span class="navbar-item">
+                    <img src="${picture}" alt="" style="width: 30px;margin-top: 5px;margin-right: 10px">
+                    <a class="is-inverted">
+                      <p class="font__colorBlack"><u><b id="username">${name}</b></u></p>
+                    </a>
+                  </span>
+                  <span class="navbar-item" style="margin-right: -6px;">
+                    <span class="line"></span>
+                    <a class="is-inverted">
+                      <img src="../../images/icon/Bell.png" alt="" style="width: 30px;margin-top: 5px;">
+                    </a>
+                  </span>
+                  <div class="dropdown">
+                    <div class="dropdown-menu" id="dropdown-menu2" role="menu">
+                      <div class="dropdown-content">
+                        <!-- <div class="dropdown-item">
+                          <p>You can insert <strong>any type of content</strong> within the dropdown menu.</p>
+                        </div>
+                        <hr class="dropdown-divider"> -->
+                        <a href="#" onclick="console.log('edit profile')" class="dropdown-item">
+                          Edit Profile
+                        </a> 
+                        <hr class="dropdown-divider">
+                        <a href="#" onclick="logout()" class="dropdown-item">
+                          <font color="red"><b>Log out</b></font>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <button onclick="dropdown()" class="btn" aria-haspopup="true" aria-controls="dropdown-menu2">
+                    <span class="navbar-item">
+                      <span class="line"></span>
+                      <a class="is-inverted" style="font-size: 26px;">
+                        <i class="fa fa-cog font__colorBlack" aria-hidden="true"></i>
+                      </a>
+                    </span>
+                  </button>
+                  
+                  <span class="navbar-item">
+                    <span class="line"></span>
+                    <a class="is-inverted">
+                      <img src="../../images/language/thailand_square_sticker_640.png" alt="" style="width: 30px;margin-top: 5px;">
+                    </a>
+                  </span>
+                  <span class="navbar-item">
+                    <a class="is-inverted" style="font-size: 23px; margin-top: -5px">
+                      <i class="fa fa-search font__colorBlack" aria-hidden="true"></i>
+                    </a>
+                  </span>
+                </div>
+              </div>
+
+              
+
+            </div>
+          </div>
+        </nav>
+      </div>
+  `
+
+
+  const loaddataset = () => {
+    $.ajax({
+      url: config.connectServer.linkServ,
+      type: 'GET',
+      dataType: 'json',
+      success: function(data) {
+        console.log(data)
+        data.forEach(arr => {
+          if (arr.id === onGetUrl()) {
+            getElement('contentId').innerHTML = arr.content
+            getElement('titleID').innerHTML = arr.title
+            getElement('whoWithID').innerHTML = arr.whoWith
+            getElement('startTravelID').innerHTML = arr.startTravel
+            getElement('travelDayID').innerHTML = arr.travelDay
+            getElement('createDateID').innerHTML = arr.createDate
+            getElement('viewCountID').innerHTML = arr.viewCount
+          } else {
+            console.log('is not data')
+          }
+        })
+      },
+      error: function (xhr, ajaxOptions, thrownError) {
+        if (xhr.status <= 0) {
+          let status = confirm('Are you make sure trust certification!! Browser')
+          if (status) {
+            window.location.href = config.connectServer.linkServ
+          } else {
+            alert('You can not see the content because browser of you are stuck not certification "TRUST CERTIFICATION" please')
+          }
+        }
+      }
+    })
+    .always((jqXHROrData, textStatus, jqXHROrErrorThrown) =>    {
+      console.log(`In completion: textStatus is: ${textStatus}`);
+    })
+  }
+</script>

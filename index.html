@@ -1,1 +1,870 @@
-OK
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OHODiary</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Prompt:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,thai,vietnamese">
+    <!-- Bulma Version 0.6.0 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css" />
+    <!-- slider version 2.3.1 -->
+    <link href="https://css.mafengwo.net/css/cv/css+mfw-index.2015:css+jquery-ui-1.9.1.custom.min:css+hotel+datepicker-range^ZFM^1519455874.css" rel="stylesheet" type="text/css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/PgwSlider/2.3.1/pgwslider.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <style>
+        .btn {
+          border: none;
+          width: 62px;
+        }
+      </style>
+  </head>
+  <body>
+    <section class="hero is-info is-large">
+      <div id="menu">
+        <div class="hero-head">
+          <nav class="navbar">
+            <div class="container">
+              <div class="navbar-brand">
+          <!-- Hello -->
+                <a class="navbar-item hover-none-style">
+                  <img src="images/icon/logo-index.png" alt="Logo" style="width: 83px; margin-left: -12px;">
+                </a>
+                <span class="navbar-burger burger" data-target="navbarMenuHeroB">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </div>
+              <div id="navMenuTransparentExample" class="navbar-menu">
+                <div class="navbar-start">
+                  <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link brown padding__LeftRight" href="login.html"> <!-- is-active -->
+                      Home
+                    </a>
+                  </div>
+                  <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link lightGreen padding__LeftRight" href="login.html">
+                      OHO Calendar
+                    </a>
+                  </div>
+                  <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link orange padding__LeftRight" href="login.html">
+                      All Topics
+                    </a>
+                  </div>
+                  <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link blue padding__LeftRight" href="login.html">
+                      OHO Topic
+                    </a>
+                  </div>
+                </div>
+  
+                <div id="navbarMenuHeroB" class="navbar-menu">
+                  <div class="navbar-end">
+                    <span class="navbar-item">
+                      <a class="is-inverted register_button l-magin" href="register.html">
+                        <font color="#aaaaaa">Register</font>
+                      </a>
+                      <span class="space__Right"></span>
+                      <a class="button small-btn yellow-orange is-inverted" style="letter-spacing: 1px;" href="login.html">
+                        <span>Login</span>
+                      </a>
+                    </span>
+                    <span class="navbar-item">
+                      <span class="line"></span>
+                      <a class="is-inverted">
+                        <img src="images/language/thailand_square_sticker_640.png" alt="" style="width: 30px;margin-top: 5px;">
+                      </a>
+                      <span class="space__Right"></span>
+                      <a class="is-inverted" style="font-size: 23px; margin-top: -5px">
+                        <i class="fa fa-search font__colorBlack" aria-hidden="true"></i>
+                      </a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <!-- <ul class="pgwSlider">
+        <li><img src="https://travel.gc.ca/vt/images/promo/travel-insurance-bag.jpg" alt="Paris, France" data-description="Eiffel Tower and Champ de Mars"></li>
+        <li><img src="https://careerblog.du.edu/wp-content/uploads/sites/5/2017/06/travel.jpeg" alt="Montréal, QC, Canada" data-large-src="https://careerblog.du.edu/wp-content/uploads/sites/5/2017/06/travel.jpeg"></li>
+        <li>
+            <img src="http://www.moneysense.ca/wp-content/uploads/2016/03/Traveling-solo.jpg">
+            <span>Shanghai, China</span>
+        </li>
+        <li>
+            <a href="http://www.nyc.gov" target="_blank">
+              <img src="http://ichef.bbci.co.uk/wwfeatures/wm/live/1280_720/images/live/p0/4q/w8/p04qw8tg.jpg">
+    	        <span>New York, NY, USA</span>
+            </a>
+        </li>
+      </ul> -->
+      <!-- <link href="http://css.mafengwo.net/css/cv/css+base:css+jquery.suggest:css+plugins:css+plugins+jquery.jgrowl:css+other+popup:css+mfw-header.2015^YlVS^1519455874.css" rel="stylesheet" type="text/css"> -->
+
+      <style>
+        .mfw-focus {
+          position: relative;
+          z-index: 20;
+          margin-bottom: 0px!important;
+          clear: both;
+        }
+        .show-slider .show-nav .active span {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          border: 2px solid #ff9d00;
+          width: 110px!important;
+          height: 62px!important;
+          overflow: hidden;
+        }
+        .show-slider .show-more {
+          position: absolute;
+          z-index: 2;
+          right: 40px;
+          top: 50%;
+          margin-top: 160px;
+          width: 110px;
+          height: 43px;
+          background-image: url(http://www.clker.com/cliparts/I/Z/c/6/W/I/small-button-md.png)!important;
+          background-position: -103px -3px!important;
+          line-height: 200px;
+          overflow: hidden;
+        }
+        .show-slider .show-more {
+          background-image: url(http://www.clker.com/cliparts/I/Z/c/6/W/I/small-button-md.png)!important;
+          background-size: 105px!important;
+        }
+        .searchtab {
+          margin-bottom: 34px!important;
+          color: #fff;
+          line-height: 26px;
+          font-size: 14px;
+        }
+        .hide {
+          display: none;
+        }
+
+        .show-info {
+          position: relative;
+          left: 0;
+        }
+
+        @media (max-width: 1440px) {
+          .show-slider .show-image .show-info {
+            margin-left: -414px;
+          }
+        }
+      </style>
+
+
+      <script language="javascript" src="https://js.mafengwo.net/js/cv/js+jquery-1.8.1.min:js+global+json2:js+M+Module:js+M+M:js+M+Log:js+m.statistics:js+advert+inspector^alw^1517667549.js" type="text/javascript" crossorigin="anonymous"></script>
+      <script async="" src="https://js.mafengwo.net/js/cv/js+Dropdown:js+pageletcommon+pageHeadUserInfoWWWNormal:js+jquery.tmpl:js+M+module+InputListener:js+M+module+SuggestionXHR:js+M+module+DropList:js+M+module+Suggestion:js+M+module+MesSearchEvent:js+SiteSearch:js+AHeader:js+jquery.lazyload:js+M+module+Pagination:js+index+ControllerRecommend:js+M+module+ClickToggle:js+M+module+Slider:js+xdate:js+hotel+module+FestivalDateConfig:js+jquery-ui-core:js+jquery-ui-datepicker:js+hotel+module+DateRangePicker:js+M+module+Storage:js+hotel+module+ModuleProvider:js+hotel+module+BookingDate:js+hotel+module+Log:js+hotel+module+Search_v2:js+M+module+dialog+Layer:js+M+module+dialog+DialogBase:js+M+module+dialog+Dialog:js+AIndex:js+module+app+Page:js+M+module+Toggle:js+index+AGinfoSearch:js+M+module+PageAdmin:js+M+module+Cookie:js+M+module+ResourceKeeper:js+jquery.jgrowl.min:js+AMessage:js+M+module+FrequencyVerifyControl:js+M+module+FrequencySystemVerify:js+ALogin:js+M+module+ScrollObserver:js+M+module+QRCode:js+AToolbar:js+ACnzzGaLog:js+ARecruit:js+ALazyLoad^YlVTQA^1518346920.js" crossorigin="anonymous"></script>
+      <style type="text/css">
+        :root #header + #content > #left > #rlblock_left { 
+          display: none !important;
+        }
+      </style>
+
+
+      <div class="mfw-focus" id="_j_mfw_focus">
+        <div class="show-slider" id="_j_top_pic_container" style="height: 480px;">
+          <ul class="show-image">
+            <li class="first" style="display: block;">
+              <a href="/i/8630730.html" target="_blank" class="show-pic">
+                <img src="https://n4-q.mafengwo.net/s11/M00/F5/DF/wKgBEFq-QLiAYqq2AAi4R4FaS2k51.jpeg?imageMogr2%2Finterlace%2F1">
+              </a>
+              <a href="/i/8630730.html" target="_blank" class="show-title dark">
+                <div class="date"><span class="day">31</span>/Mar.2018</div>
+                <h3>Baikal: Siberian princess in white gauze</h3>
+              </a>
+              <p class="show-info">Picture from<font color="#FF9900"><a href="/travel-scenic-spot/mafengwo/14635.html" target="_blank">Baikal</a></font>, this destination has a total of<font color="#FF9900"><a href="http://www.mafengwo.cn/photo/mdd/14635.html" target="_blank" rel="nofollow">25690</a></font>Zhang<a href="/travel-scenic-spot/mafengwo/14635.html" target="_blank">Baikal</a>image. The film is made of<font color="#FF9900"><a href="http://www.mafengwo.cn/u/79297765.html" target="_blank">Vanese_i</a></font>Honored product!</p>
+            </li>
+            <li style="display: none;">
+              <a href="/i/8376678.html" target="_blank" class="show-pic">
+                <img src="https://n1-q.mafengwo.net/s11/M00/35/DA/wKgBEFq9i8yANZEgAALSi_z5JY098.jpeg?imageMogr2%2Finterlace%2F1">
+              </a>
+              <a href="/i/8376678.html" target="_blank" class="show-title dark">
+                <div class="date">
+                  <span class="day">30</span>/Mar.2018
+                </div>
+                <h3>"19-year-old, met with another oneself" Tokyo alone, there are always different scenery on the road</h3>
+              </a>
+              <p class="show-info">Picture from<font color="#FF9900"><a href="/travel-scenic-spot/mafengwo/10222.html" target="_blank">Tokyo</a></font>, this destination has a total of<font color="#FF9900"><a href="http://www.mafengwo.cn/photo/mdd/10222.html" target="_blank" rel="nofollow">269651</a></font>Zhang<a href="/travel-scenic-spot/mafengwo/10222.html" target="_blank">Tokyo</a>image. The film is made of<font color="#FF9900"><a href="http://www.mafengwo.cn/u/83796483.html" target="_blank">Jerome</a></font>Honored product!</p>
+            </li>
+            <li style="display: none;">
+              <a href="/i/8643358.html" target="_blank" class="show-pic"><img src="https://p3-q.mafengwo.net/s11/M00/01/46/wKgBEFq7fBmAblBnAAbgsoLpFYQ16.jpeg?imageMogr2%2Finterlace%2F1"></a>
+              <a href="/i/8643358.html" target="_blank" class="show-title dark">
+              <div class="date">
+                <span class="day">29</span>/Mar.2018
+              </div>
+              <h3>4 days and 4 hours, Jingdezhen and Arita told me the ceramic story</h3>
+              </a>
+              <p class="show-info">Picture from<font color="#FF9900"><a href="/travel-scenic-spot/mafengwo/10589.html" target="_blank">Jingdezhen</a></font>, this destination has a total of<font color="#FF9900"><a href="http://www.mafengwo.cn/photo/mdd/10589.html" target="_blank" rel="nofollow">21089</a></font>Zhang<a href="/travel-scenic-spot/mafengwo/10589.html" target="_blank">Jingdezhen</a>image. The film is made of<font color="#FF9900"><a href="http://www.mafengwo.cn/u/88358953.html" target="_blank">Xiao Xin Xiao</a></font>Honored product!</p>
+            </li>
+            <li style="display: none;">
+              <a href="/i/8650618.html" target="_blank" class="show-pic"><img src="https://b4-q.mafengwo.net/s11/M00/D6/C3/wKgBEFq6HGKAJH2PAAfx-dqbMvc80.jpeg?imageMogr2%2Finterlace%2F1"></a>
+              <a href="/i/8650618.html" target="_blank" class="show-title dark">
+                <div class="date">
+                  <span class="day">28</span>/Mar.2018
+                </div>
+                <h3>At the end of the world, there is a wilderness summoning you || Iceland Norway Travel Notes</h3>
+              </a>
+              <p class="show-info">Picture from<font color="#FF9900"><a href="/travel-scenic-spot/mafengwo/10549.html" target="_blank">Iceland</a></font>, this destination has a total of<font color="#FF9900"><a href="http://www.mafengwo.cn/photo/mdd/10549.html" target="_blank" rel="nofollow">37866</a></font>Zhang<a href="/travel-scenic-spot/mafengwo/10549.html" target="_blank">Iceland</a>image. The film is made of<font color="#FF9900"><a href="http://www.mafengwo.cn/u/75151343.html" target="_blank">wind</a></font>Honored product!</p>
+            </li>
+            <li style="display: none;">
+              <a href="/i/8620478.html" target="_blank" class="show-pic"><img src="https://b2-q.mafengwo.net/s11/M00/9A/C5/wKgBEFq40M-AEPmQAATieM6um9A79.jpeg?imageMogr2%2Finterlace%2F1"></a>
+              <a href="/i/8620478.html" target="_blank" class="show-title dark">
+                <div class="date">
+                  <span class="day">27</span>/Mar.2018
+                </div>
+                <h3>India | "TA" is a ragged drunk, but also a delicate dressing girl</h3>
+              </a>
+              <p class="show-info">Picture from<font color="#FF9900"><a href="/travel-scenic-spot/mafengwo/10182.html" target="_blank">India</a></font>, this destination has a total of<font color="#FF9900"><a href="http://www.mafengwo.cn/photo/mdd/10182.html" target="_blank" rel="nofollow">264776</a></font>Zhang<a href="/travel-scenic-spot/mafengwo/10182.html" target="_blank">印度</a>image. The film is made of<font color="#FF9900"><a href="http://www.mafengwo.cn/u/52233524.html" target="_blank">Early summer pleated skirt</a></font>Honored product!</p>
+            </li>
+          </ul>
+          <ul class="show-nav">
+            <li class="active"><a href="javascript:"><img src="https://n4-q.mafengwo.net/s11/M00/F5/D6/wKgBEFq-QLCAbOykAAQPJHJ62o844.jpeg?imageMogr2%2Fthumbnail%2F%21108x67r%2Fgravity%2FCenter%2Fcrop%2F%21108x67%2Fquality%2F90" height="62" width="110"><span></span></a></li>
+            <li class=""><a href="javascript:"><img src="https://b3-q.mafengwo.net/s11/M00/04/87/wKgBEFq87zeANjdHAAE_EDJD7sk23.jpeg?imageMogr2%2Fthumbnail%2F%21108x67r%2Fgravity%2FCenter%2Fcrop%2F%21108x67%2Fquality%2F90" height="62" width="110"><span></span></a></li>
+            <li class=""><a href="javascript:"><img src="https://n2-q.mafengwo.net/s11/M00/01/41/wKgBEFq7fBGAOqLqAAQA7KC6P0o43.jpeg?imageMogr2%2Fthumbnail%2F%21108x67r%2Fgravity%2FCenter%2Fcrop%2F%21108x67%2Fquality%2F90" height="62" width="110"><span></span></a></li>
+            <li class=""><a href="javascript:"><img src="https://b2-q.mafengwo.net/s11/M00/D6/B7/wKgBEFq6HFSAGVFiAANS1pPCbLY65.jpeg?imageMogr2%2Fthumbnail%2F%21108x67r%2Fgravity%2FCenter%2Fcrop%2F%21108x67%2Fquality%2F90" height="62" width="110"><span></span></a></li>
+            <li class=""><a href="javascript:"><img src="https://n4-q.mafengwo.net/s11/M00/9A/B7/wKgBEFq40MCANKJTAAL442xP8n899.jpeg?imageMogr2%2Fthumbnail%2F%21108x67r%2Fgravity%2FCenter%2Fcrop%2F%21108x67%2Fquality%2F90" height="62" width="110"><span></span></a></li>
+          </ul>
+          <a class="show-more" target="_blank" href="/app/calendar.php">Vividly</a>
+          </div>
+          <div class="search-container" id="_j_index_search">
+            <div class="search-group">
+              <div class="searchtab" id="_j_index_search_tab">
+                <ul class="clearfix">
+                  <li class="tab-selected" data-index="0"><i></i>all</li>
+                  <li data-index="1"><i></i>Hotel</li>
+                  <li data-index="2"><i></i>destination</li>
+                  <li data-index="3"><i></i>Travel Mall</li>
+                </ul>
+              </div>
+              <!-- begin -->
+              <div class="searchbar" id="_j_index_search_bar_all">
+                <div class="search-wrapper">
+                  <div class="search-input">
+                    <input name="q" type="text" placeholder="Search destination / Raiders / Hotel / Travel Specials" id="_j_index_search_input_all" autocomplete="off">
+                  </div>
+                </div>
+                <div class="search-button" id="_j_index_search_btn_all">
+                  <a role="button" href="javascript:"><i class="icon-search"></i></a>
+                </div>
+              </div>
+              <!-- end -->
+              <!--  begin -->
+              <div class="searchbar searchbar-hotel hide" id="_j_index_search_bar_hotel">
+                <div class="search-wrapper">
+                  <form action="/hotel/s.php" method="get">
+                  <div class="search-input">
+                    <input name="keyword" type="text" placeholder="Please enter country, region, city name" id="_j_index_search_input_hotel" autocomplete="off">
+                  </div>
+                  </form>
+                  <div class="search-date" id="_j_check_in">
+                    <input type="text" readonly="readonly" id="dp1522497696070" class="hasDatepicker">
+                    <span></span>
+                    <i class="icon-cal"></i>
+                  </div>
+                  <div class="search-date" id="_j_check_out">
+                    <input type="text" readonly="readonly" id="dp1522497696071" class="hasDatepicker">
+                    <span></span>
+                    <i class="icon-cal"></i>
+                  </div>
+                </div>
+                <div class="search-button" id="_j_index_search_btn_hotel">
+                  <a role="button" href="javascript:"><i class="icon-search"></i></a>
+                </div>
+              </div>
+              <!--  end -->
+              <!--  begin -->
+              <div class="searchbar hide" id="_j_index_search_bar_mdd">
+                <form action="/search/s.php" method="get">
+                  <div class="search-wrapper">
+                    <div class="search-input">
+                      <input name="q" type="text" placeholder="I'm going..." id="_j_index_search_input_mdd" autocomplete="off">
+                    </div>
+                  </div>
+                <div class="search-button" id="_j_index_search_btn_mdd">
+                  <a role="button" href="javascript:"><i class="icon-search"></i></a>
+                </div>
+                </form>
+              </div>
+              <!--  end -->
+              <!-- begin -->
+              <div class="searchbar hide" id="_j_index_search_bar_sales">
+                <div class="search-wrapper">
+                  <div class="search-input">
+                    <input type="text" placeholder="Product Name / Destination / Offer" id="_j_index_search_input_sales" autocomplete="off">
+                  </div>
+                </div>
+                <div class="search-button" id="_j_index_search_btn_sales">
+                  <a role="button" href="javascript:"><i class="icon-search"></i></a>
+                </div>
+              </div>
+                <!-- end -->
+                <!-- suggest begin -->
+                <div class="search-suggest-panel search-suggest-place hide" id="_j_index_suggest_list_mdd">
+                  <ul class="suggest-list"></ul>
+                </div>
+                <!-- suggest end -->
+                <!-- suggest begin -->
+                <div class="search-suggest-panel search-suggest-hotel hide" id="_j_index_suggest_list_hotel">
+                </div>
+                <!-- suggest end -->
+              </div>
+          </div>
+      </div>
+
+    </section>
+    <section class="hero">
+      <div class="hero-body first-body">
+        <div class="container">
+          <div class="row">
+            <div class="columns">
+              <div class="column is-6">
+                <h1 class="title">
+                  New Topic
+                </h1>
+              </div>
+              <div class="column is-6">
+                <a class="button small-btn yellow-orange is-pulled-right">View All Topic</a>
+              </div>
+            </div>
+          </div>
+
+          <hr class="hr">
+
+          <div id="elementCard"></div>
+          
+        </div>
+      </div>
+    </section>
+    <section class="hero" style="margin-top: -24px;">
+      <div class="hero-body">
+        <div class="container">
+          <div class="row">
+            <div class="columns">
+              <div class="column is-6">
+                <h1 class="title">
+                  OHO Knowledge
+                </h1>
+              </div>
+              <div class="column is-6">
+                <a class="button small-btn dark-blue is-pulled-right">View All Topic</a>
+              </div>
+            </div>
+          </div>
+          <hr class="hr">
+
+          <div class="columns">
+            <div class="column">
+              <div class="card-modify">
+                <div class="card-image">
+                  <figure class="image is-2by1">
+                    <img src="images/blog/oho-4.png" id="images" class="images310x170" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="card-content-modify">
+                  <div class="media">
+                    <div class="content">
+                      <p>
+                        <span style="font-weight: 700">
+                          <img src="images/icon/view-icon.png"/>
+                          <span style="position: relative;bottom: 6px;">20,115</span>
+                        </span>
+                        <span style="font-weight: 700;margin-left: 21px;">
+                          <img src="images/icon/like-icon.png" style="position:relative;bottom: -3px;"/>
+                          <span style="position: relative;bottom: 6px;">1,480</span>
+                        </span>
+                      </p>
+                    </div>
+
+                  </div>
+
+                  <hr class="space-under">
+                  <div class="media-content">
+                    <p class="title is-4 font__prompt">การแต่งภาพพื้นหลังแบบสี ...</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="card-modify">
+                <div class="card-image">
+                  <figure class="image is-2by1">
+                    <img src="images/blog/oho-5.png" class="images310x170" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="card-content-modify">
+                  <div class="media">
+                    <div class="content">
+                      <p>
+                        <span style="font-weight: 700">
+                          <img src="images/icon/view-icon.png"/>
+                          <span style="position: relative;bottom: 6px;">17,001</span>
+                        </span>
+                        <span style="font-weight: 700;margin-left: 21px;">
+                          <img src="images/icon/like-icon.png" style="position:relative;bottom: -3px;"/>
+                          <span style="position: relative;bottom: 6px;">2,047</span>
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+
+                  <hr class="space-under">
+                  <div class="media-content">
+                    <p class="title is-4 font__prompt">เทคนิคกางเต็นท์แบบง่ายๆ</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="card-modify">
+                <div class="card-image">
+                  <figure class="image is-2by1">
+                    <img src="images/blog/oho-6.png" class="images310x170" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="card-content-modify">
+                  <div class="media">
+                    <div class="content">
+                      <p>
+                        <span style="font-weight: 700">
+                          <img src="images/icon/view-icon.png"/>
+                          <span style="position: relative;bottom: 6px;">11,572</span>
+                        </span>
+                        <span style="font-weight: 700;margin-left: 21px;">
+                          <img src="images/icon/like-icon.png" style="position:relative;bottom: -3px;"/>
+                          <span style="position: relative;bottom: 6px;">3,416</span>
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+
+                  <hr class="space-under">
+                  <div class="media-content">
+                    <p class="title is-4 font__prompt">เทคนิคแต่งภาพ“ดูฟุ้งชวนฝัน”</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="hero" style="margin-top: -24px;">
+      <div class="hero-body">
+        <div class="container">
+          <div class="row">
+            <div class="columns">
+              <div class="column is-6">
+                <h1 class="title">
+                  OHO Topic
+                </h1>
+              </div>
+              <div class="column is-6">
+                <a class="button small-btn grean-lightgrean is-pulled-right">View All Topic</a>
+              </div>
+            </div>
+          </div>
+          <hr class="hr">
+
+          <div class="columns">
+            <div class="column">
+              <div class="card-modify">
+                <div class="card-image">
+                  <figure class="image is-2by1">
+                    <img src="images/blog/oho-1.png" class="images310x170" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="card-content-modify">
+                  <div class="media">
+                    <div class="content">
+                      <p>
+                        <span style="font-weight: 700">
+                          <img src="images/icon/view-icon.png"/>
+                          <span style="position: relative;bottom: 6px;">20,115</span>
+                        </span>
+                        <span style="font-weight: 700;margin-left: 21px;">
+                          <img src="images/icon/like-icon.png" style="position:relative;bottom: -3px;"/>
+                          <span style="position: relative;bottom: 6px;">1,480</span>
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+
+                  <hr class="space-under">
+                  <div class="media-content">
+                    <p class="title is-4 font__prompt">10 ที่เที่ยวหัวหิน เสน่ห์แห่ง...</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="card-modify">
+                <div class="card-image">
+                  <figure class="image is-2by1">
+                    <img src="images/blog/oho-2.png" class="images310x170" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="card-content-modify">
+                  <div class="media">
+                    <div class="content">
+                      <p>
+                        <span style="font-weight: 700">
+                          <img src="images/icon/view-icon.png"/>
+                          <span style="position: relative;bottom: 6px;">17,001</span>
+                        </span>
+                        <span style="font-weight: 700;margin-left: 21px;">
+                          <img src="images/icon/like-icon.png" style="position:relative;bottom: -3px;"/>
+                          <span style="position: relative;bottom: 6px;">2,047</span>
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+
+                  <hr class="space-under">
+                  <div class="media-content">
+                    <p class="title is-4 font__prompt">5 สถานที่สำหรับครอบครัวใน ...</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="card-modify">
+                <div class="card-image">
+                  <figure class="image is-2by1">
+                    <img src="images/blog/oho-3.png" class="images310x170" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="card-content-modify">
+                  <div class="media">
+                    <div class="content">
+                      <p>
+                        <span style="font-weight: 700">
+                          <img src="images/icon/view-icon.png"/>
+                          <span style="position: relative;bottom: 6px;">11,572</span>
+                        </span>
+                        <span style="font-weight: 700;margin-left: 21px;">
+                          <img src="images/icon/like-icon.png" style="position:relative;bottom: -3px;"/>
+                          <span style="position: relative;bottom: 6px;">3,416</span>
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+
+                  <hr class="space-under">
+                  <div class="media-content">
+                    <p class="title is-4 font__prompt">รวมโรงแรมสุดแนว Koh Phi...</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="hero is-light" style="box-shadow: 0px 1px 2px #c5c5c5 inset; background-color: #fafafa">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns" style="color: #777777;">
+            <div class="column is-2 has-text-centered">
+              <img src="images/icon/logo-index.png" alt="Logo" style="
+                position: relative;
+                left: 0px;
+                top: 30px;
+                width: 110px;
+                margin-bottom: 40px;
+              ">
+            </div>
+            <div class="column is-6">
+              <p>
+                ความทรงจำดีๆ คุณเก็บไว้ที่ไหน ? เรื่องราวดีๆ อาจมีหลงลืมไปได้ หากไม่ได้จดบันทึก
+                ประสบการณ์ ที่น่าแบ่งปัน อาจไม่มีใครได้รับรู้ หากคุณไม่ได้เป็นคนเล่าเรื่องราว
+                รายละเอียดของภาพถ่าย ในความรู้สึกเก่าๆ อาจมีลบเลือนไปบ้าง หากคุณเผลอละเลยไป
+              </p>
+              <p class="hightlight">#มาเขียน_มาแชร์_มาเล่า_กับเรา #OHO_Diary</p>
+              <p>© 2017 OHO Diary All Rights Reserved</p>
+            </div>
+            <div class="column is-4">
+              <table style="border-left-style:solid; border-left-width:1px">
+                <tr><td>&nbsp;นักท่องเที่ยวกว่า <strong>5,210</strong> คน</td></tr>
+                <tr><td>&nbsp;นักอ่านกว่า <strong>8,524,742</strong> คน</td></tr>
+                <tr><td>&nbsp;เรื่องราวกว่า <strong>8,450</strong> เรื่อง</td></tr>
+                <tr><td>&nbsp;โรงแรมกว่า <strong>25,571</strong> แห่ง</td></tr>
+                <tr><td>&nbsp;ร้านอาหารกว่า <strong>18,773</strong> แห่ง</td></tr>
+                <tr><td>&nbsp;สถานที่ท่องเที่ยว <strong>1,085</strong> แห่ง</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <div class="columns">
+            <div class="column is-9">
+              <div id="navMenuTransparentExample" class="navbar-menu">
+                <div class="navbar-start" style="position: absolute;bottom: -20px;">
+                  <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link white colorWhite font_footer_prompt_15 padding__LeftRight" href="#!" style="line-height: 38px;"> <!-- is-active -->
+                      Home
+                    </a>
+                  </div>
+                  <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link set-lightGreen lightGreen colorWhite font_footer_prompt_15 padding__LeftRight" href="#!">
+                      OHO Calendar
+                    </a>
+                  </div>
+                  <div class="navbar-item has-dropdown is-hoverable">
+                    <a href="#!" class="navbar-link set-orange orange colorWhite font_footer_prompt_15 padding__LeftRight">
+                      All Topics
+                    </a>
+                  </div>
+                  <div class="navbar-item has-dropdown is-hoverable font_footer_prompt_15">
+                    <a class="navbar-link set-blue blue colorWhite padding__LeftRight" href="#!">
+                      OHO Topic
+                    </a>
+                  </div>
+                  <div class="navbar-item has-dropdown is-hoverable font_footer_prompt_15">
+                    <a class="navbar-link white colorWhite padding__LeftRight" href="#!">
+                      เกี่ยวกับเรา
+                    </a>
+                  </div>
+                  <div class="navbar-item has-dropdown is-hoverable font_footer_prompt_15">
+                    <a class="navbar-link white colorWhite padding__LeftRight" href="#!">
+                      ติดต่อโฆษณา
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column is-3">
+              <div class="social">
+                <a class="is-inverted">
+                  <img src="images/icon/if_twitter_252077.svg" class="social-twitter-icon">
+                </a>
+                <a class="is-inverted">
+                  <img src="images/icon/if_facebook_986944.svg" class="social-facebook-icon">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+<script src="js/ServerTag.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="js/helper.js"></script>
+<script type="text/javascript">
+  window.onload = () => {
+    getPostData()
+    getProfile()
+  }
+
+  
+  const getProfile = () => {
+    const profile = JSON.parse(localStorage.getItem('profile'))
+    console.log('profile : ', profile.given_name, profile)
+    if (profile) {
+      const Data = getEleMenuActiveUser(profile.given_name, profile.picture)
+      document.getElementById('menu').innerHTML = Data
+    }
+  }
+
+  const dropdown = () => {
+    var dropdown = document.querySelector('.dropdown');
+      dropdown.classList.toggle('is-active');
+  }
+
+  const getEleMenuActiveUser = (name, picture) => `
+      <div class="hero-head">
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-brand">
+              <a class="navbar-item hover-none-style" href="../../index.html">
+                <img src="images/icon/logo-index.png" alt="Logo" style="width: 83px; margin-left: -12px;">
+              </a>
+              <span class="navbar-burger burger" data-target="navbarMenuHeroB">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </div>
+            <div id="navMenuTransparentExample" class="navbar-menu">
+              <div class="navbar-start">
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link brown padding__LeftRight" href="src/homeScreen/home.html"> <!-- is-active -->
+                    Home
+                  </a>
+                </div>
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link lightGreen padding__LeftRight" href="#!">
+                    OHO Calendar
+                  </a>
+                </div>
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <a href="#!" class="navbar-link orange padding__LeftRight">
+                    All Topics
+                  </a>
+                </div>
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link blue padding__LeftRight" href="#!">
+                    OHO Topic
+                  </a>
+                </div>
+              </div>
+
+              <div id="navbarMenuHeroB" class="navbar-menu">
+                <div class="navbar-end">
+                  <span class="navbar-item">
+                    <img src="${picture}" alt="" style="width: 30px;margin-top: 5px;margin-right: 10px">
+                    <a class="is-inverted">
+                      <p class="font__colorBlack"><u><b id="username">${name}</b></u></p>
+                    </a>
+                  </span>
+                  <span class="navbar-item" style="margin-right: -6px;">
+                    <span class="line"></span>
+                    <a class="is-inverted">
+                      <img src="images/icon/Bell.png" alt="" style="width: 30px;margin-top: 5px;">
+                    </a>
+                  </span>
+                  <div class="dropdown" style="z-index: 1000">
+                    <div class="dropdown-menu" id="dropdown-menu2" role="menu">
+                      <div class="dropdown-content">
+                        <!-- <div class="dropdown-item">
+                          <p>You can insert <strong>any type of content</strong> within the dropdown menu.</p>
+                        </div>
+                        <hr class="dropdown-divider"> -->
+                        <a href="#" onclick="console.log('edit profile')" class="dropdown-item">
+                          Edit Profile
+                        </a> 
+                        <hr class="dropdown-divider">
+                        <a href="#" onclick="logout()" class="dropdown-item">
+                          <font color="red"><b>Log out</b></font>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <button onclick="dropdown()" class="btn" aria-haspopup="true" aria-controls="dropdown-menu2">
+                    <span class="navbar-item">
+                      <span class="line"></span>
+                      <a class="is-inverted" style="font-size: 26px;">
+                        <i class="fa fa-cog font__colorBlack" aria-hidden="true"></i>
+                      </a>
+                    </span>
+                  </button>
+                  <span class="navbar-item">
+                    <span class="line"></span>
+                    <a class="is-inverted">
+                      <img src="images/language/thailand_square_sticker_640.png" alt="" style="width: 30px;margin-top: 5px;">
+                    </a>
+                  </span>
+                  <span class="navbar-item">
+                    <a class="is-inverted" style="font-size: 23px; margin-top: -5px">
+                      <i class="fa fa-search font__colorBlack" aria-hidden="true"></i>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+  `
+
+  const logout = () => {
+    localStorage.clear()
+    window.location.href = "index.html"
+    // window.location.reload()
+  }
+
+
+
+  const TextTest = 'สปอร์ตจิตพิสัย ช็อคตัวตนฮองเฮา มุมมองโคโยตี้ไลท์รวมมิตรโปรเจ็กต์ เบลอแอปเปิล พลานุภาพสงบสุข เบญจมบพิตรช็อปปิ้งกษัตริยาธิเพรส เมาท์ บร็อกโคลีแจมม้าหินอ่อนโหลน สหรัฐซิง'
+  const sliceText = (src) => src.slice(0, 166).concat('...')
+
+  const getElementCardFunc = (id, title, viewCount, startTravel) => `
+    <div class="row">
+      <div class="columns">
+        <div class="column is-3">
+          <figure class="image is-4by2">
+            <img src="images/blog/img-1.png" alt="Placeholder image">
+          </figure>
+        </div>
+        <div class="column is-7">
+          <div class="content">
+            <a href="src/topicScreen/topic.html#${id}"><h1 style="cursor: pointer">${title}</h1></a>
+            <p>${sliceText(TextTest)}</p>
+            <!-- <span><span><img src="images/icon/map-icon.png"/></span>  <a href="#!" class="underline">ถนนข้าวสาร</a></span> -->
+          </div>
+        </div>
+        <div class="column is-2">
+          <div class="card">
+            <div class="card-content card-content-hight">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img src="images/writer/writer-1.png" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="subtitle">Tommy โล..</p>
+                  <p style="position: relative;right: 60px;bottom: -5px; width: 10em;font-weight: 700">
+                    <img src="images/icon/view-icon.png"/>
+                    <span style="position: relative;bottom: 6px;">450</span>
+                  </p>
+                  <p class="writer-like-icon">
+                    <img src="images/icon/like-icon.png"/>
+                    <span style="position: relative;bottom: 10px;">51</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `
+
+  const getPostData = () => {
+    $.ajax({
+      url: config.connectServer.linkServ,
+      type: 'GET',
+      dataType: 'json',
+      success: function(data) {
+        console.log(data)
+        let info = '';
+        data.forEach((d) => info+=getElementCardFunc(d.id, d.title, d.viewCount, d.startTravel))
+        document.getElementById('elementCard').innerHTML = info
+      },
+      error: function (xhr, ajaxOptions, thrownError) {
+        if (xhr.status <= 0) {
+          let status = confirm('Are you make sure trust certification!! Browser')
+          if (status) {
+            window.location.href = config.connectServer.linkServ
+          } else {
+            alert('You can not see the content because browser of you are stuck not certification "TRUST CERTIFICATION" please')
+          }
+        }
+      }
+    })
+    .always((jqXHROrData, textStatus, jqXHROrErrorThrown) =>    {
+      console.log(`In completion: textStatus is: ${textStatus}`);
+    })
+  }
+</script>
