@@ -43,7 +43,7 @@
                 <a href="index.html" title="back to home page">
                   <img src="images/icon/logo.png">
                 </a>
-                <h3 class="title has-text-grey">Login</h3>
+                <h3 class="title has-text-grey">Login</h3> 
               </figure>
 
               <form>
@@ -95,7 +95,7 @@
 <script src="env.js"></script>
 <script>
 
-  window.onload = function() {
+  window.onload = function() { // test
     webAuth.parseHash(function(err, authResult) {
       if (authResult && authResult.accessToken && authResult.idToken) {
         setSession(authResult)
