@@ -95,7 +95,7 @@
 <script src="env.js"></script>
 <script>
 
-  window.onload = function() { // test
+  window.onload = function() {
     webAuth.parseHash(function(err, authResult) {
       if (authResult && authResult.accessToken && authResult.idToken) {
         setSession(authResult)
