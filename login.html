@@ -125,8 +125,8 @@
   var webAuth = new auth0.WebAuth({
     domain: env.AUTH0_DOMAIN,
     clientID: env.AUTH0_CLIENT_ID,
-     redirectUri: env.AUTH0_CALLBACK_URL,
-    //redirectUri: env.AUTH0_CALLBACK_URL_PRODUCTION,
+    //  redirectUri: env.AUTH0_CALLBACK_URL,
+    redirectUri: env.AUTH0_CALLBACK_URL_PRODUCTION,
     audience: 'https://' + env.AUTH0_DOMAIN + '/userinfo',
     responseType: 'token id_token',
     scope: 'openid profile email'
