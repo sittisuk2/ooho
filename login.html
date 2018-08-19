@@ -43,7 +43,7 @@
                 <a href="index.html" title="back to home page">
                   <img src="images/icon/logo.png">
                 </a>
-                <h3 class="title has-text-grey">Login</h3> 
+                <h3 class="title has-text-grey">Login</h3>
               </figure>
 
               <form>
@@ -100,18 +100,82 @@
       if (authResult && authResult.accessToken && authResult.idToken) {
         setSession(authResult)
         var accessToken = localStorage.getItem('access_token')
-        
         webAuth.client.userInfo(accessToken, function(err, profile) {
         console.log('profile : ', profile)
         if (profile) {
           localStorage.setItem('profile', JSON.stringify(profile))
-          window.location.href = 'index.html'
+          finduser(profile)
+          //window.location.href = 'index.html'
         }
       });
       }
     })
   }
+  function finduser(profile){
+    const data = {
+      sub: profile.sub
+    }
+    $.ajax({
+      url: config.connectServer.Findsub,
+      type: 'POST',
+      data: data,
+      async:false,
+      success: function(result) {
+        console.log(result);
+        if (result == ""){
+          SaveRegis(profile);
+        }
+      },
+    })
+    .statusCode({
+      401: function() { console.log( 'Unauthorized' ); },
+      200: function() { console.log( 'OK!'); }
+    });
+  }
 
+  function SaveRegis(profile){
+
+		// day = $("#txtday").val();
+		// month= $("#txtmonth").val();
+		// year = $("#txtyear").val();
+    //txtbirthDate = year+'-'+month+'-'+day;
+		//base64img = $('#test_img').css("background-image");
+		const data = {
+      img: '',
+		  username: profile.given_name,
+		  password: '',
+		  nname: profile.given_name,
+		  email: profile.email,
+		  tel: '',
+		  birthDate: '',
+		  email_verified: profile.email_verified,
+		  family_name: profile.family_name,
+		  given_name: profile.given_name,
+		  locale: profile.locale,
+		  nickname: profile.nickname,
+		  picture: profile.picture,
+		  sub: profile.sub,
+		  updated_at: profile.updated_at,
+		  id_token: profile.id_token
+		}
+
+    $.ajax({
+		  url: config.connectServer.SaveRegisterAuth,
+
+		  type: 'POST',
+		  data: data,
+      contentType: "application/x-www-form-urlencoded;charset=UTF-8",
+		  success: function(result) {
+
+        localStorage.setItem('profile', JSON.stringify(profile))
+        locationHref('index.html');
+		  },
+		})
+		.statusCode({
+		  401: function() { console.log( 'Unauthorized' ); },
+		  200: function() { console.log( 'OK!'); }
+		});
+	}
   function setSession(authResult) {
     // Set the time that the Access Token will expire at
     var expiresAt = JSON.stringify(
@@ -122,11 +186,12 @@
     localStorage.setItem('expires_at', expiresAt);
   }
 
+ 
   var webAuth = new auth0.WebAuth({
     domain: env.AUTH0_DOMAIN,
     clientID: env.AUTH0_CLIENT_ID,
-    //  redirectUri: env.AUTH0_CALLBACK_URL,
-    redirectUri: env.AUTH0_CALLBACK_URL_PRODUCTION,
+    redirectUri: env.AUTH0_CALLBACK_URL,
+    //redirectUri: env.AUTH0_CALLBACK_URL_PRODUCTION,
     audience: 'https://' + env.AUTH0_DOMAIN + '/userinfo',
     responseType: 'token id_token',
     scope: 'openid profile email'
@@ -137,7 +202,7 @@
       case 'facebook':
         // signinWithFacebook()
         // console.log(signinWithFacebook());
-        
+
         webAuth.authorize({
           connection: 'facebook',
         });
