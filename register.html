@@ -146,47 +146,53 @@
 
   </body>
 </html>
-<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.auth0.com/js/auth0/9.5.1/auth0.min.js"></script>
 <script async type="text/javascript" src="js/imagechooser.js"></script>
 <script src="js/ServerTag.js"></script>
 <script src="js/helper.js"></script>
+<script src="env.js"></script>
 
-<script type="text/javascript">
+<script>
 	const _onSaveRegis = (postStatus) => {
-
-    //alert($('#test_img').css("background-image"));
-
-    
 		day = $("#txtday").val();
 		month= $("#txtmonth").val();
-		year = $("#txtyear").val();
+    year = $("#txtyear").val();
+    const pass = $("#password").val()
 		
 		txtbirthDate = year+'-'+month+'-'+day;
 		base64img = $('#test_img').css("background-image");
 		const data = {
       img: encodeURIComponent(base64img),
 		  username: $("#username").val(),
-		  password: $("#password").val(),
+		  password: pass,
 		  nname: $("#nname").val(),
 		  email: $("#email").val(),
 		  tel: $("#tel").val(),
 		  birthDate: txtbirthDate,
-		}
+    }
     
-		$.ajax({
+    webAuth.signup({
+      connection: 'Username-Password-Authentication',
+      email: $('#email').val(),
+      password: pass
+    }, function (err) {
+      if (err) return alert(`ข้อมูลซ้ำ ​!! : ${err.message}`)
+      sendToServer(data)
+      return alert('success signup !')
+    });
+  }
+  
+  const sendToServer = (data) => {
+    $.ajax({
 		  url: config.connectServer.SaveRegister,
 		  type: 'POST',
 		  data: data,
       contentType: "application/x-www-form-urlencoded;charset=UTF-8",
 		  success: function(result) {
-        localStorage.setItem('profile', JSON.stringify(result))
-        locationHref('index.html');
+        localStorage.setItem('profile', JSON.stringify(result[0]))
+        locationHref('login.html');
 		  },
 		})
-		.statusCode({
-		  401: function() { console.log( 'Unauthorized' ); },
-		  200: function() { console.log( 'OK!'); }
-		});
-		
-	  }
+  }
 </script>

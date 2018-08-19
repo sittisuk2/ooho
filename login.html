@@ -49,7 +49,7 @@
               <form>
                 <div class="field">
                   <div class="control">
-                    <input class="input is-large" type="email" id="user" placeholder="Usernamel" autofocus="">
+                    <input class="input is-large" type="email" id="user" placeholder="Email" autofocus="">
                   </div>
                 </div>
 
@@ -91,7 +91,7 @@
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="js/ServerTag.js"></script>
 <script src="js/helper.js"></script>
-<script src="js/providers.js"></script>
+<!-- <script src="js/providers.js"></script> -->
 <script src="env.js"></script>
 <script>
 
@@ -122,53 +122,44 @@
     localStorage.setItem('expires_at', expiresAt);
   }
 
-  var webAuth = new auth0.WebAuth({
-    domain: env.AUTH0_DOMAIN,
-    clientID: env.AUTH0_CLIENT_ID,
-    //  redirectUri: env.AUTH0_CALLBACK_URL,
-    redirectUri: env.AUTH0_CALLBACK_URL_PRODUCTION,
-    audience: 'https://' + env.AUTH0_DOMAIN + '/userinfo',
-    responseType: 'token id_token',
-    scope: 'openid profile email'
-  });
 
   signInWithProvider = (id) => {
     switch (id) {
       case 'facebook':
-        // signinWithFacebook()
-        // console.log(signinWithFacebook());
-        
-        webAuth.authorize({
-          connection: 'facebook',
-        });
+        webAuth.authorize({ connection: 'facebook' })
         break;
 
       case 'twitter':
-        // signinWithTwitter();
-        webAuth.authorize({
-          connection: 'twitter',
-        });
+        webAuth.authorize({ connection: 'twitter' })
         break;
 
       case 'google':
-        // signinWithGoogle();
-        // console.log(signinWithGoogle());
-        webAuth.authorize({
-          connection: 'google-oauth2',
-        });
+        webAuth.authorize({ connection: 'google-oauth2' })
         break;
 
       default:
         signinWithEmail(valueId('user'), valueId('pass'));
+    }
+  }
 
-        if(valueId('user') && valueId('pass')) {
+  const signinWithEmail = (user, pass) => {
+    webAuth.redirect.loginWithCredentials({
+      connection: 'Username-Password-Authentication',
+      username: user,
+      password: pass,
+      scope: 'openid profile email'
+    }, function(err, authResult) {
+      // Auth tokens in the result or an error
+      if (err) return alert(`Something went wrong: ${err.message}`);
+      return alert(`success login! ${authResult}`)
+        if(user && pass) {
           setTimeout(() => {
             locationHref('index.html');
             resetId('user');
             resetId('pass');
           }, 1000)
         }
-    }
+    });
   }
 
 

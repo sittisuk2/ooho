@@ -477,6 +477,8 @@
 <!-- End emoji-picker JavaScript -->
 
 <script src="../../js/helper.js"></script>
+<script src="../Acomponents/navBar.js"></script>
+
 
 <script>
   window.onload = function() {
@@ -489,122 +491,12 @@
 
     loaddataset()
     document.getElementById('foo').innerHTML = Footer()
-    getProfile()
+    getProfile('../../', '../homeScreen/')
   }
 
   $('.share').click(() => alert('ok'))
 
-  const onGetUrl = () => {
-    return location.href.split('#')[1]
-  }
-
-  const getProfile = () => {
-    const profile = JSON.parse(localStorage.getItem('profile'))
-    if (profile) {
-      document.getElementById('menu').innerHTML = getEleMenuActiveUser(profile.given_name, profile.picture)
-    }
-  }
-
-  const getEleMenuActiveUser = (name, picture) => `
-      <div class="hero-head">
-        <nav class="navbar">
-          <div class="container">
-            <div class="navbar-brand">
-              <a class="navbar-item hover-none-style" href="../../index.html">
-                <img src="../../images/icon/logo-index.png" alt="Logo" style="width: 83px; margin-left: -12px;">
-              </a>
-              <span class="navbar-burger burger" data-target="navbarMenuHeroB">
-                <span></span>
-                <span></span>
-                <span></span>
-              </span>
-            </div>
-            <div id="navMenuTransparentExample" class="navbar-menu">
-              <div class="navbar-start">
-                <div class="navbar-item has-dropdown is-hoverable">
-                  <a class="navbar-link brown padding__LeftRight" href="../homeScreen/home.html"> <!-- is-active -->
-                    Home
-                  </a>
-                </div>
-                <div class="navbar-item has-dropdown is-hoverable">
-                  <a class="navbar-link lightGreen padding__LeftRight" href="#!">
-                    OHO Calendar
-                  </a>
-                </div>
-                <div class="navbar-item has-dropdown is-hoverable">
-                  <a href="#!" class="navbar-link orange padding__LeftRight">
-                    All Topics
-                  </a>
-                </div>
-                <div class="navbar-item has-dropdown is-hoverable">
-                  <a class="navbar-link blue padding__LeftRight" href="#!">
-                    OHO Topic
-                  </a>
-                </div>
-              </div>
-
-              <div id="navbarMenuHeroB" class="navbar-menu">
-                <div class="navbar-end">
-                  <span class="navbar-item">
-                    <img src="${picture}" alt="" style="width: 30px;margin-top: 5px;margin-right: 10px">
-                    <a class="is-inverted">
-                      <p class="font__colorBlack"><u><b id="username">${name}</b></u></p>
-                    </a>
-                  </span>
-                  <span class="navbar-item" style="margin-right: -6px;">
-                    <span class="line"></span>
-                    <a class="is-inverted">
-                      <img src="../../images/icon/Bell.png" alt="" style="width: 30px;margin-top: 5px;">
-                    </a>
-                  </span>
-                  <div class="dropdown">
-                    <div class="dropdown-menu" id="dropdown-menu2" role="menu">
-                      <div class="dropdown-content">
-                        <!-- <div class="dropdown-item">
-                          <p>You can insert <strong>any type of content</strong> within the dropdown menu.</p>
-                        </div>
-                        <hr class="dropdown-divider"> -->
-                        <a href="#" onclick="console.log('edit profile')" class="dropdown-item">
-                          Edit Profile
-                        </a> 
-                        <hr class="dropdown-divider">
-                        <a href="#" onclick="logout()" class="dropdown-item">
-                          <font color="red"><b>Log out</b></font>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <button onclick="dropdown()" class="btn" aria-haspopup="true" aria-controls="dropdown-menu2">
-                    <span class="navbar-item">
-                      <span class="line"></span>
-                      <a class="is-inverted" style="font-size: 26px;">
-                        <i class="fa fa-cog font__colorBlack" aria-hidden="true"></i>
-                      </a>
-                    </span>
-                  </button>
-                  
-                  <span class="navbar-item">
-                    <span class="line"></span>
-                    <a class="is-inverted">
-                      <img src="../../images/language/thailand_square_sticker_640.png" alt="" style="width: 30px;margin-top: 5px;">
-                    </a>
-                  </span>
-                  <span class="navbar-item">
-                    <a class="is-inverted" style="font-size: 23px; margin-top: -5px">
-                      <i class="fa fa-search font__colorBlack" aria-hidden="true"></i>
-                    </a>
-                  </span>
-                </div>
-              </div>
-
-              
-
-            </div>
-          </div>
-        </nav>
-      </div>
-  `
-
+  const onGetUrl = () => location.href.split('#')[1]
 
   const loaddataset = () => {
     $.ajax({

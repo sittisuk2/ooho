@@ -224,8 +224,6 @@
     document.getElementById('foo').innerHTML = Footer()
     getPostData()
     getProfile()
-
-    
   }
 
   const dropdown = () => {
@@ -236,15 +234,19 @@
   const logout = () => {
     localStorage.clear()
     window.location.href = "../../index.html"
-    // window.location.reload()
   }
 
   const getProfile = () => {
     const profile = JSON.parse(localStorage.getItem('profile'))
     if (profile) {
-      const Data = getEleMenuActiveUser(profile.given_name, profile.picture)
-      document.getElementById('menu').innerHTML = Data
-      cardProfile(profile.picture, profile.given_name, profile.family_name)
+      const splitString = profile.sub.split('|')
+      if (splitString[0] === 'auth0') {
+        document.getElementById('menu').innerHTML = getEleMenuActiveUser(profile.nickname, profile.picture)
+        cardProfile(profile.picture, profile.nickname, profile.email)
+      } else {
+        document.getElementById('menu').innerHTML = getEleMenuActiveUser(profile.given_name, profile.picture)
+        cardProfile(profile.picture, profile.given_name, profile.family_name)
+      }
     }
   }
 
