@@ -1,7 +1,7 @@
 const config = {};
 config.connectServer = {
     linkfreeServ: 'https://oohoserver.000webhostapp.com/fetch.php',
-    linkServ: 'https://81021100-52-20180323161333.webstarterz.com/fetchTopic.php',
+    linkServ: 'https://www.ivdstudio.com/oohoweb/fetchTopic.php',
 	post2Serv: 'https://www.ivdstudio.com/oohoweb/saveTopic.php',
     LoadContent: 'https://www.ivdstudio.com/oohoweb/LoadContent.php',
     uploadimages: 'https://www.ivdstudio.com/oohoweb/uploadimages.php',
