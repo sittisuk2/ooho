@@ -640,9 +640,6 @@
                   </span>
                 </div>
               </div>
-
-              
-
             </div>
           </div>
         </nav>
@@ -722,7 +719,6 @@
   }
 
   const _onLoadContent = (postStatus) => {
-
     const data = {
       //memberId: $("#memberId").val()
       memberId: 1
@@ -733,20 +729,18 @@
       data: data,
       success: function(result) {
         console.log(result)
-		if (result != ""){
-			$("#topicId").val(result[0]['id']);
-			$("#fieldInput").val(result[0]['title']);
+        if (result != ""){
+          $("#topicId").val(result[0]['id']);
+          $("#fieldInput").val(result[0]['title']);
 
-			CKEDITOR.instances.des.setData(result[0]['content']);
+          CKEDITOR.instances.des.setData(result[0]['content']);
 
-			$("#des").val(result[0]['content']);
-			console.log(result[0]['content']);
-			//$("#topicId").val(result);
-		}else{
-			CKEDITOR.instances.des.setData("{ข้อมูลการท่องเที่ยวใหม่}");
-		}
-        
-
+          $("#des").val(result[0]['content']);
+          console.log(result[0]['content']);
+          //$("#topicId").val(result);
+        }else{
+          CKEDITOR.instances.des.setData("{ข้อมูลการท่องเที่ยวใหม่}");
+        }
       },
     })
     .statusCode({
