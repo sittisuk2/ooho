@@ -43,7 +43,7 @@
                         <input id="image" type="file" data-droppable-input=""/>
                         <i class="fa fa-camera fa-2x image-select__icon"></i>
                         <div class="image-select__message"></div>
-                        <div class="bg-image aspect-square"
+                        <div class="bg-image aspect-square" id = 'test_img' name = 'test_img'
                              style="background-image: url('images/blog/register.png');" data-droppable-image=""></div>
                       </form>
                     </label>
@@ -62,13 +62,13 @@
                 <form>
                   <div class="field">
                     <div class="control">
-                      <input class="input is-large" type="text" placeholder="Usernamel" autofocus="">
+                      <input id = 'username' name = 'username' class="input is-large" type="text" placeholder="Usernamel" autofocus="">
                     </div>
                   </div>
 
                   <div class="field">
                     <div class="control">
-                      <input class="input is-large" type="password" placeholder="Password">
+                      <input id = 'password' name = 'password' class="input is-large" type="password" placeholder="Password">
                     </div>
                   </div>
 
@@ -86,43 +86,43 @@
 
                   <div class="field">
                     <div class="control">
-                      <input class="input is-large" type="text" placeholder="ชื่อ">
+                      <input id = 'nname' name = 'nname' class="input is-large" type="text" placeholder="ชื่อ">
                     </div>
                   </div>
 
                   <div class="field">
                     <div class="control">
-                      <input class="input is-large" type="email" placeholder="Email" >
+                      <input id = 'email' name = 'email' class="input is-large" type="email" placeholder="Email" >
                     </div>
                   </div>
 
                   <div class="field">
                     <div class="control">
-                      <input class="input is-large" type="number" placeholder="เบอร์โทร">
+                      <input id = 'tel' name = 'tel' class="input is-large" type="text" placeholder="เบอร์โทร">
                     </div>
                   </div>
 
                   <div class="field">
                     <div class="columns">
                       <div class="column">
-                        <select id="day">
+                        <select id="txtday" name = "txtday">
                           <option selected disabled>วันเกิด</option>
-                          <option>1</option>
-                          <option>2</option>
+                          <option value = "1" >1</option>
+                          <option value = "2" >2</option>
                         </select>
                       </div>
                       <div class="column">
-                        <select>
+                        <select id="txtmonth" name = "txtmonth">
                           <option selected disabled>เดือน</option>
-                          <option>มกราคม</option>
-                          <option>กุมภาพันธ์</option>
+                          <option value = "1">มกราคม</option>
+                          <option value = "2">กุมภาพันธ์</option>
                         </select>
                       </div>
                       <div class="column">
-                        <select>
+                        <select id="txtyear" name = "txtyear">
                           <option selected disabled>ปี</option>
-                          <option>1996</option>
-                          <option>1995</option>
+                          <option value = "1996">1996</option>
+                          <option value = "1995">1995</option>
                         </select>
                       </div>
                     </div>
@@ -134,7 +134,7 @@
                     </label>
                   </div>
 
-                  <a class="button is-block large-btn grean-lightgrean">Register</a>
+                  <a onclick="_onSaveRegis()" class="button is-block large-btn grean-lightgrean">Register</a>
                 </form>
               </div>
             </div>
@@ -150,4 +150,45 @@
 <script async type="text/javascript" src="js/imagechooser.js"></script>
 <script src="js/ServerTag.js"></script>
 <script src="js/helper.js"></script>
-<script src="js/providers.js"></script>
+
+<script type="text/javascript">
+	const _onSaveRegis = (postStatus) => {
+
+    //alert($('#test_img').css("background-image"));
+
+    
+		day = $("#txtday").val();
+		month= $("#txtmonth").val();
+		year = $("#txtyear").val();
+		
+		txtbirthDate = year+'-'+month+'-'+day;
+		base64img = $('#test_img').css("background-image");
+		const data = {
+      img: encodeURIComponent(base64img),
+		  username: $("#username").val(),
+		  password: $("#password").val(),
+		  nname: $("#nname").val(),
+		  email: $("#email").val(),
+		  tel: $("#tel").val(),
+		  birthDate: txtbirthDate,
+		}
+    
+		$.ajax({
+		  url: config.connectServer.SaveRegister,
+      
+		  type: 'POST',
+		  data: data,
+      contentType: "application/x-www-form-urlencoded;charset=UTF-8",
+		  success: function(result) {
+      localStorage.setItem('profile', JSON.stringify(result))
+      locationHref('index.html');
+
+		  },
+		})
+		.statusCode({
+		  401: function() { console.log( 'Unauthorized' ); },
+		  200: function() { console.log( 'OK!'); }
+		});
+		
+	  }
+</script>
