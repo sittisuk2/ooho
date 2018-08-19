@@ -2,10 +2,12 @@ const config = {};
 config.connectServer = {
     linkfreeServ: 'https://oohoserver.000webhostapp.com/fetch.php',
     linkServ: 'https://www.ivdstudio.com/oohoweb/fetchTopic.php',
-	post2Serv: 'https://www.ivdstudio.com/oohoweb/saveTopic.php',
+	  post2Serv: 'https://www.ivdstudio.com/oohoweb/saveTopic.php',
     LoadContent: 'https://www.ivdstudio.com/oohoweb/LoadContent.php',
     uploadimages: 'https://www.ivdstudio.com/oohoweb/uploadimages.php',
-	SaveRegister: 'https://www.ivdstudio.com/oohoweb/SaveRegister.php'
+	  SaveRegister: 'https://www.ivdstudio.com/oohoweb/SaveRegister.php',
+	  Findsub: 'https://www.ivdstudio.com/oohoweb/Findsub.php',
+	  SaveRegisterAuth: 'https://www.ivdstudio.com/oohoweb/SaveRegisterAuth.php'
 }
 
 
@@ -26,5 +28,3 @@ config.connectServer = {
 //   messagingSenderId: "499976697391"
 // };
 // firebase.initializeApp(config);
-
-
