@@ -492,6 +492,13 @@
     loaddataset()
     document.getElementById('foo').innerHTML = Footer()
     getProfile('../../', '../homeScreen/')
+    dropdownMobile()
+
+    const ele = document.querySelector('.signout')
+    ele.style.display = window.outerWidth >= 1024 ? 'none':'block'
+    window.addEventListener('resize', function() {
+      ele.style.display = window.outerWidth >= 1024 ? 'none':'block'
+    }, true);
   }
 
   $('.share').click(() => alert('ok'))

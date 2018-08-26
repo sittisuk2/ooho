@@ -126,7 +126,7 @@
   
         <div id="picture" style="position:absolute; top: 0; overflow: hidden; background-color: #cccccc; height: 100%; width: 100%;"></div>
         
-        <div class="container" style="position: relative;">
+        <div class="container addHeader" style="position: relative;">
           <div id="panel" class="panel" style="width: 10.333%;">
             <label for="fileInput">
               <form action="" class="image-select" data-droppable="">
@@ -141,9 +141,11 @@
           </div>
           <p class="fontNow">Select the size should be greater than 1680px high-definition large,<br/> such as the original camera</p>
         </div>
-		<input type="hidden" name="topicId" id="topicId">
-        <div class="container" style="position: relative; height: 103px">
-            <input style="font-size: 15px!important" id="fieldInput" type="text" placeholder="{หัวข้อเรื่องใหม่}" value="{หัวข้อเรื่องใหม่}"/>
+
+        <input type="hidden" name="topicId" id="topicId">
+        
+        <div class="container" style="position: absolute; bottom: 0; right: 0; left: 0; height: 103px">
+          <input style="font-size: 15px!important" id="fieldInput" type="text" placeholder="{หัวข้อเรื่องใหม่}" value="{หัวข้อเรื่องใหม่}"/>
         </div>
       </div>
     </section>
@@ -154,6 +156,8 @@
         <div class="container">
             <div class="columns">
                 
+                <div class="space"></div>
+
                 <div class="column is-8">
                     <!-- <textarea placeholder="Write Your Diary ..." id="des" rows="4"></textarea> -->
                     <textarea id="des" name="editor1" rows="4">
@@ -269,11 +273,14 @@
                     </p>
                     
 
-
                     </textarea>
                 </div>
 
-                <div class="column is-4" style="position: relative">
+                <div class="space"></div>
+
+                
+
+                <div class="column is-4 control-writing">
                     <div class="straightLine"></div>
                     <div style="margin: 0 16px">
                         <div class="columns" style="margin:0">
@@ -302,10 +309,6 @@
                             >
                               <b>Upload Your Image</b>
                             </button>
-                            <!-- <label for="file-input">
-                              <img src="../../images/backend/upload.png" alt="">
-                            </label>
-                            <input type="file" id="file-input" class="fieldUpload" /> -->
                             <p style="margin-top: 20px;font-size: 14px;">
                               Select the size of the image should be greater than 100 * 50, the size should be less than 30M
                               Press the Ctrl key to support multiple selection, add up to 100 pictures at a time
@@ -407,6 +410,158 @@
       </div>
       <button class="modal-close is-large" aria-label="close"></button>
     </div>
+
+
+    <!-- <div class="straightLine"></div> -->
+
+    <div class="control-writing-mobile">
+      <div style="margin: 10px">
+        <div class="flex" style="justify-content: center">
+          <a onclick="insertImage()"><img src="../../images/icon/insertPicture.png" alt=""></a>
+        </div>
+        <div style="text-align: center">
+          <a onclick="insertImage()" class="font__bold"> Insert Picture</a>            
+        </div>
+      </div>
+      <div style="margin: 10px">
+        <div class="flex" style="justify-content: center">
+          <a onclick="insertEmotion()"><img src="../../images/icon/smiling.png" alt=""></a>
+        </div>
+        <div style="text-align: center">
+          <a onclick="insertEmotion()" class="font__bold"> Insert Emotion</a>        
+        </div>
+      </div>
+      <div style="margin: 10px">
+        <div class="flex" style="justify-content: center">
+          <a onclick="insertPara()"><img src="../../images/icon/insertParagraph.png" alt=""></a>
+        </div>
+        <div style="text-align: center">
+          <a onclick="insertPara()" class="font__bold"> Insert Paragraph Title</a>           
+        </div>
+      </div>
+      <div style="margin: 10px">
+        <div class="flex" style="justify-content: center">
+          <a onclick="_onSaveContent('0')"><img src="../../images/icon/saveDraft.png" alt=""></a>
+        </div>
+        <div style="text-align: center">
+          <a onclick="_onSaveContent('0')" class="font__bold"> Save Draft</a>
+          <p class="subfont__bold">14:14:48 Draft is saved automaticall</p>          
+        </div>
+      </div>
+      <div class="flex" style="justify-content: center; align-items: center; margin-right: 10px">
+        <button class="tooltip grean-lightgrean colorWhite" style="cursor: pointer;" onclick="_onSaveContent('1')">
+          <i class="fa fa-globe" aria-hidden="true"></i>  <b>Post Travals</b>
+        </button>
+      </div>
+    </div>
+
+    <!-- <div style="margin: 0 16px; display: none;">
+        <div class="columns" style="margin:0">
+            <div class="column is-4" style="padding:0">
+                <a onclick="insertImage()"><img src="../../images/icon/insertPicture.png" alt=""></a>
+            </div>
+            <div class="column is-8" style="padding:0">
+                <div style="margin-top: 10px">
+                    <a onclick="insertImage()" class="font__bold"> Insert Picture</a>
+                </div>
+            </div>
+            <input type="file" id="Thefile" style="display: none" />
+        </div>
+        <div id="labelImage" class="labelFeature">
+          <div class="arrow_box arrowColorGreen"></div>
+          <center>
+            <button
+              class="tooltip grean-lightgrean colorWhite"
+              style="
+                width: 50%;
+                margin-top: 3em;
+                cursor: pointer;
+                font-size: 20px;
+              "
+              onclick="performClick('Thefile')"
+            >
+              <b>Upload Your Image</b>
+            </button>
+            <p style="margin-top: 20px;font-size: 14px;">
+              Select the size of the image should be greater than 100 * 50, the size should be less than 30M
+              Press the Ctrl key to support multiple selection, add up to 100 pictures at a time
+            </p>
+          </center>
+        </div>
+
+        <div class="columns" style="margin:0">
+          <div class="column is-4" style="padding:0">
+              <a onclick="insertEmotion()"><img src="../../images/icon/smiling.png" alt=""></a>
+          </div>
+          <div class="column is-8" style="padding:0">
+            <div style="margin-top: 10px">
+              <a onclick="insertEmotion()" class="font__bold"> Insert Emotion</a>
+            </div>
+          </div>
+        </div>
+        <div id="labelEmotion" class="labelFeature">
+          <div class="arrow_box arrowColorOrange"></div>
+          <ul class="menuEmotion">
+            <li><a href="#!common" class="active" onclick="openEmo('Common')">Common</a></li>
+            <li><a href="#!charac" onclick="openEmo('Charac')">Character</a></li>
+            <li><a href="#!travel" onclick="openEmo('Travel')">Travel</a></li>
+          </ul>
+          <hr style="margin-top: 10px" />
+          <div class="contEmotion">
+            <div id="Common" class="emoGroup">
+                <div id="emojicon_common" style="width: 440px; font-size: 28px;"></div>
+            </div>
+            <div id="Charac" class="emoGroup" style="display: none">
+                <div id="emojicon_charac" style="width: 440px; font-size: 28px;"></div>
+            </div>
+            <div id="Travel" class="emoGroup" style="display: none">
+                <div id="emojicon_travel" style="width: 440px; font-size: 28px;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns" style="margin:0">
+          <div class="column is-4" style="padding:0">
+            <a onclick="insertPara()"><img src="../../images/icon/insertParagraph.png" alt=""></a>
+          </div>
+          <div class="column is-8" style="padding:0">
+            <div style="margin-top: 10px">
+              <a onclick="insertPara()" class="font__bold"> Insert Paragraph Title</a>
+            </div>
+          </div>
+        </div>
+        <div id="labelPara" class="labelFeature">
+          <div class="arrow_box arrowColorBlue"></div>
+          <input id="searchHeader" type="text" placeholder="Search Header ..." />
+          <div style="margin: 1em 1em" ></div>
+          <h6>Choose Your Style</h6>
+          <div style="margin: 1em 1em" ></div>
+          <label class="checkbox">
+            <input type="checkbox" id="checkboxed">
+            Remember me
+          </label>
+        </div>
+
+        <hr>
+
+        <div class="columns" style="margin:0">
+          <div class="column is-4" style="padding:0">
+              <a onclick="alert('Save Draft')"><img src="../../images/icon/saveDraft.png" alt=""></a>
+          </div>
+          <div class="column is-8" style="padding:0">
+            <div style="margin-top: 10px">
+              <a onclick="_onSaveContent('0')" class="font__bold"> Save Draft</a>
+              <p class="subfont__bold">14:14:48 Draft is saved automaticall</p>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <button class="tooltip grean-lightgrean colorWhite" style="width:100%;cursor: pointer;font-size: 20px;" onclick="_onSaveContent('1')">
+            <i class="fa fa-globe" aria-hidden="true"></i>  <b>Post Travals</b>
+        </button>
+    </div> -->
   </body>
 </html>
 
@@ -458,7 +613,20 @@
     Emojicon()
     $('#des').autosize()
     getProfile()
+    dropdownMobile()
     document.getElementById('Thefile').addEventListener("change", oncheckInfoImg)
+
+    const ele = document.querySelector('.signout')
+    ele.style.display = window.outerWidth >= 1024 ? 'none':'block'
+    window.addEventListener('resize', function() {
+      if (window.outerWidth >= 1024) {
+        ele.style.display = 'none'
+      } else {
+        ele.style.display = 'block'
+        $(".space").addClass("column is-2")
+        $(".control-writing").removeClass("column is-4")
+      }
+    }, true);
   }
 
   function oncheckInfoImg() {
@@ -563,7 +731,7 @@
                 <span></span>
               </span>
             </div>
-            <div id="navMenuTransparentExample" class="navbar-menu">
+            <div id="navbarMenuHeroB" class="navbar-menu" style="position: relative; z-index: 30">
               <div class="navbar-start">
                 <div class="navbar-item has-dropdown is-hoverable">
                   <a class="navbar-link brown padding__LeftRight" href="#!"> <!-- is-active -->
@@ -585,9 +753,14 @@
                     OHO Topic
                   </a>
                 </div>
+                <div class="navbar-item has-dropdown is-hoverable signout">
+                  <a class="navbar-link red padding__LeftRight" onclick="logout('../../)"> <!-- is-active -->
+                    Sign Out
+                  </a>
+                </div>
               </div>
 
-              <div id="navbarMenuHeroB" class="navbar-menu">
+              <div class="navbar-menu">
                 <div class="navbar-end">
                   <span class="navbar-item">
                     <img src="${picture}" alt="" style="width: 30px;margin-top: 5px;margin-right: 10px">
@@ -690,13 +863,10 @@
       data: data,
       success: function(result) {
         //console.log(result)
+        alert('save success!')
         $("#topicId").val(result);
       },
     })
-    .statusCode({
-      401: function() { console.log( 'Unauthorized' ); },
-      200: function() { console.log( 'OK!'); }
-    });
   }
   const _onUploadImage = () => {
 
@@ -712,10 +882,6 @@
         //$("#topicId").val(result);
       },
     })
-    .statusCode({
-      401: function() { console.log( 'Unauthorized' ); },
-      200: function() { console.log( 'OK!'); }
-    });
   }
 
   const _onLoadContent = (postStatus) => {
@@ -737,7 +903,6 @@
 
           $("#des").val(result[0]['content']);
           console.log(result[0]['content']);
-          //$("#topicId").val(result);
         }else{
           CKEDITOR.instances.des.setData("{ข้อมูลการท่องเที่ยวใหม่}");
         }

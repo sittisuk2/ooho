@@ -1,7 +1,6 @@
 .wrapperUpload {
   position: relative;
   min-height: 560px;
-  width: 100%;
   padding-top: 10em;
 }
 .uploadImage {
@@ -212,7 +211,49 @@ input[type="checkbox"]:before {
 }
 input[type="checkbox"]:checked:before {
   content: '✔';
+}
 
+.control-writing {
+  position: relative;
+}
+.control-writing-mobile {
+  display: none;
+  background-color: white;
+  box-shadow: 0px -1px 5px #ccc;
+}
+.flex {
+  display: flex;
+}
+.colorWhite {
+  font-size: 20px;
+}
+
+.space {
+  display: none;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .control-writing {
+    display: none;
+  }
+
+  .control-writing-mobile {
+    display: flex;
+  }
+
+  .space {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .control-writing-mobile {
+    font-size: 10px;
+  }
+  .colorWhite {
+    font-size: 10px;
+  }
 }
 
 

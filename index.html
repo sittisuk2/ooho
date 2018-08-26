@@ -28,7 +28,6 @@
           <nav class="navbar">
             <div class="container">
               <div class="navbar-brand">
-          <!-- Hello -->
                 <a class="navbar-item hover-none-style">
                   <img src="images/icon/logo-index.png" alt="Logo" style="width: 83px; margin-left: -12px;">
                 </a>
@@ -38,7 +37,7 @@
                   <span></span>
                 </span>
               </div>
-              <div id="navMenuTransparentExample" class="navbar-menu">
+              <div id="navbarMenuHeroB" class="navbar-menu" style="position: relative; z-index: 30">
                 <div class="navbar-start">
                   <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link brown padding__LeftRight" href="login.html"> <!-- is-active -->
@@ -62,7 +61,7 @@
                   </div>
                 </div>
   
-                <div id="navbarMenuHeroB" class="navbar-menu">
+                <div class="navbar-menu">
                   <div class="navbar-end">
                     <span class="navbar-item">
                       <a class="is-inverted register_button l-magin" href="register.html">
@@ -240,8 +239,9 @@
           </ul>
           <a class="show-more" target="_blank" href="/app/calendar.php">Vividly</a>
           </div>
-          <div class="search-container" id="_j_index_search">
-            <div class="search-group">
+    <div class="search-container" id="_j_index_search">
+            <!-- <div style="width: 200px; height: 200px; background-color: red"></div> -->
+            <!-- <div class="search-group">
               <div class="searchtab" id="_j_index_search_tab">
                 <ul class="clearfix">
                   <li class="tab-selected" data-index="0"><i></i>all</li>
@@ -250,7 +250,8 @@
                   <li data-index="3"><i></i>Travel Mall</li>
                 </ul>
               </div>
-              <!-- begin -->
+              
+
               <div class="searchbar" id="_j_index_search_bar_all">
                 <div class="search-wrapper">
                   <div class="search-input">
@@ -261,8 +262,10 @@
                   <a role="button" href="javascript:"><i class="icon-search"></i></a>
                 </div>
               </div>
-              <!-- end -->
-              <!--  begin -->
+              
+
+              
+              
               <div class="searchbar searchbar-hotel hide" id="_j_index_search_bar_hotel">
                 <div class="search-wrapper">
                   <form action="/hotel/s.php" method="get">
@@ -285,8 +288,9 @@
                   <a role="button" href="javascript:"><i class="icon-search"></i></a>
                 </div>
               </div>
-              <!--  end -->
-              <!--  begin -->
+              
+              
+              
               <div class="searchbar hide" id="_j_index_search_bar_mdd">
                 <form action="/search/s.php" method="get">
                   <div class="search-wrapper">
@@ -299,8 +303,9 @@
                 </div>
                 </form>
               </div>
-              <!--  end -->
-              <!-- begin -->
+              
+              
+
               <div class="searchbar hide" id="_j_index_search_bar_sales">
                 <div class="search-wrapper">
                   <div class="search-input">
@@ -311,18 +316,19 @@
                   <a role="button" href="javascript:"><i class="icon-search"></i></a>
                 </div>
               </div>
-                <!-- end -->
-                <!-- suggest begin -->
+                
+
+                
                 <div class="search-suggest-panel search-suggest-place hide" id="_j_index_suggest_list_mdd">
                   <ul class="suggest-list"></ul>
                 </div>
-                <!-- suggest end -->
-                <!-- suggest begin -->
+                
+                
                 <div class="search-suggest-panel search-suggest-hotel hide" id="_j_index_suggest_list_hotel">
                 </div>
-                <!-- suggest end -->
+                
               </div>
-          </div>
+          </div> -->
       </div>
 
     </section>
@@ -675,7 +681,16 @@
   window.onload = () => {
     getPostData()
     getProfile('', 'src/homeScreen/')
+    dropdownMobile()
+
+    const ele = document.querySelector('.signout')
+    ele.style.display = window.outerWidth >= 1024 ? 'none':'block'
+    window.addEventListener('resize', function() {
+      ele.style.display = window.outerWidth >= 1024 ? 'none':'block'
+    }, true);
   }
+
+
 
   const getPostData = () => {
     $.ajax({

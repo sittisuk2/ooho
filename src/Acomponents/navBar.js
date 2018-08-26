@@ -1,4 +1,6 @@
-const getEleMenuActiveUser = (name, picture, spoon, linkspoon) => `
+const accessToken = () => localStorage.getItem('access_token')
+
+const getEleMenuActiveUser = (name, picture, spoon, linkspoon, w) => `
       <div class="hero-head">
         <nav class="navbar">
           <div class="container">
@@ -12,7 +14,7 @@ const getEleMenuActiveUser = (name, picture, spoon, linkspoon) => `
                 <span></span>
               </span>
             </div>
-            <div id="navMenuTransparentExample" class="navbar-menu">
+            <div id="navbarMenuHeroB" class="navbar-menu" style="position: relative; z-index: 30">
               <div class="navbar-start">
                 <div class="navbar-item has-dropdown is-hoverable">
                   <a class="navbar-link brown padding__LeftRight" href="${linkspoon}home.html"> <!-- is-active -->
@@ -34,9 +36,14 @@ const getEleMenuActiveUser = (name, picture, spoon, linkspoon) => `
                     OHO Topic
                   </a>
                 </div>
+                <div class="navbar-item has-dropdown is-hoverable signout">
+                  <a class="navbar-link red padding__LeftRight" onclick="logout('${spoon}')"> <!-- is-active -->
+                    Sign Out
+                  </a>
+                </div>
               </div>
 
-              <div id="navbarMenuHeroB" class="navbar-menu">
+              <div class="navbar-menu">
                 <div class="navbar-end">
                   <span class="navbar-item">
                     <img src="${picture}" alt="" style="width: 30px;margin-top: 5px;margin-right: 10px">
@@ -95,6 +102,7 @@ const getEleMenuActiveUser = (name, picture, spoon, linkspoon) => `
   `
 
 const TextTest = 'สปอร์ตจิตพิสัย ช็อคตัวตนฮองเฮา มุมมองโคโยตี้ไลท์รวมมิตรโปรเจ็กต์ เบลอแอปเปิล พลานุภาพสงบสุข เบญจมบพิตรช็อปปิ้งกษัตริยาธิเพรส เมาท์ บร็อกโคลีแจมม้าหินอ่อนโหลน สหรัฐซิง'
+
 const sliceText = (src) => src.slice(0, 166).concat('...')
 
 const getElementCardFunc = (id, title, viewCount, startTravel) => `
@@ -107,7 +115,7 @@ const getElementCardFunc = (id, title, viewCount, startTravel) => `
     </div>
     <div class="column is-7">
       <div class="content">
-        <a href="src/topicScreen/topic.html#${id}"><h1 style="cursor: pointer">${title}</h1></a>
+        <a href="${ !accessToken() ? `../../login.html` : `src/topicScreen/topic.html#${id}`}"><h1 style="cursor: pointer">${title}</h1></a>
         <p>${sliceText(TextTest)}</p>
         <!-- <span><span><img src="images/icon/map-icon.png"/></span>  <a href="#!" class="underline">ถนนข้าวสาร</a></span> -->
       </div>
@@ -145,19 +153,9 @@ window.getProfile = (spoon = '', linkspoon = '') => {
   if (profile) {
     const splitString = profile.sub.split('|')
     if (splitString[0] === 'auth0') {
-      document.getElementById('menu').innerHTML = getEleMenuActiveUser(profile.nickname, profile.picture, spoon, linkspoon)
+      document.getElementById('menu').innerHTML = getEleMenuActiveUser(profile.nickname, profile.picture, spoon, linkspoon, window.outerWidth)
     } else {
-      document.getElementById('menu').innerHTML = getEleMenuActiveUser(profile.given_name, profile.picture, spoon, linkspoon)
+      document.getElementById('menu').innerHTML = getEleMenuActiveUser(profile.given_name, profile.picture, spoon, linkspoon, window.outerWidth)
     }
   }
-}
-
-const logout = (linkspoon = '') => {
-  localStorage.clear()
-  window.location.href = `${linkspoon}index.html`
-}
-
-window.dropdown = () => {
-  var dropdown = document.querySelector('.dropdown');
-    dropdown.classList.toggle('is-active');
 }

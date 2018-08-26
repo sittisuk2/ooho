@@ -18,7 +18,7 @@ h1 {
 
 /*  full Color */
 .brown, .lightGreen,
-.orange, .blue,
+.orange, .blue, .red,
 .white {
   border-bottom: 0px solid #ffffff;
 }
@@ -27,6 +27,7 @@ h1 {
 .yellow-orange    { background: linear-gradient(#eeca19, #ea4f16)!important; }
 .dark-blue        { background: linear-gradient(#52b3d8, #00609d)!important; }
 
+.red { color: red!important }
 .white:hover {
   border-bottom: 5px solid #ffffff;
   color: #ffffff!important;
@@ -35,6 +36,11 @@ h1 {
 .brown:hover {
   border-bottom: 5px solid #5f3712;
   color: #5f3712!important;
+  font-weight: bold!important;
+}
+.red:hover {
+  border-bottom: 5px solid red;
+  color: red!important;
   font-weight: bold!important;
 }
 .lightGreen:hover {
