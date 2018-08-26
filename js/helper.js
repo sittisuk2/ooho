@@ -1,3 +1,32 @@
+window.dropdownMobile = () => {
+  var burger = document.querySelector('.burger');
+  var menu = document.querySelector('#'+burger.dataset.target);
+  var tagA = document.querySelectorAll('.navbar-link')
+  burger.addEventListener('click', function() {
+      burger.classList.toggle('is-active')
+      menu.classList.toggle('is-active')
+      menu.style.backgroundColor = 'white'
+      tagA.forEach((d) => d.style.color = 'black')
+  })
+  window.addEventListener('resize', function() {
+      var w = window.outerWidth;
+      var h = window.outerHeight;
+      if (w >= 1024) {
+        tagA.forEach((d) => d.style.color = 'rgb(165, 165, 165)')
+      }
+  }, true);
+}
+
+window.logout = (linkspoon = '') => {
+  localStorage.clear()
+  window.location.href = `${linkspoon}index.html`
+}
+
+window.dropdown = () => {
+  var dropdown = document.querySelector('.dropdown');
+    dropdown.classList.toggle('is-active');
+}
+
 const valueId = (id) => document.getElementById(id).value;
 
 const resetId = (id) => document.getElementById(id).value = '';
@@ -18,22 +47,6 @@ const getFormatNumber = (number) => {
   const n = (typeof number === 'number') ? number : parseFloat(number)
   return (n).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,')
 }
-
-// function Number(number) {
-//   this.CleanNumber = number
-//   console.log(this.CleanNumber)
-// }
-
-// Number.prototype.formatMoney = function(cc, dd, tt){
-//   let n = this.CleanNumber,
-//   c = isNaN(cc = Math.abs(cc)) ? 2 : cc,
-//   d = dd == undefined ? "." : dd,
-//   t = tt == undefined ? "," : tt,
-//   s = n < 0 ? "-" : "",
-//   i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c))),
-//   j = (i.length) > 3 ? j % 3 : 0;
-//   return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
-// };
 
 
 const Footer = () => `
