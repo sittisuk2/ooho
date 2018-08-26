@@ -422,6 +422,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cropper/2.3.3/cropper.js"></script>
 
 <script type="text/javascript">
+	
   $(function() {
       _onLoadContent();
   });
@@ -677,12 +678,14 @@
   }
 
   const _onSaveContent = (postStatus) => {
-    _onUploadImage();// uploadimages
+    //_onUploadImage();// uploadimages
+	base64img = $('#picture').children('img').attr('src')
     const data = {
       a: valueId('fieldInput'),
       b: CKEDITOR.instances.des.getData(),
       c: postStatus,
-      d: $("#topicId").val()
+      d: $("#topicId").val(),
+	  img: encodeURIComponent(base64img)
     }
     $.ajax({
       url: config.connectServer.post2Serv,
