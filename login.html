@@ -104,14 +104,14 @@
         console.log('profile : ', profile)
         if (profile) {
           localStorage.setItem('profile', JSON.stringify(profile))
-          finduser(profile)
+          finduser(profile,authResult.idToken)
           //window.location.href = 'index.html'
         }
       });
       }
     })
   }
-  function finduser(profile){
+  function finduser(profile,idToken){
     const data = {
       sub: profile.sub
     }
@@ -121,10 +121,12 @@
       data: data,
       async:false,
       success: function(result) {
-        console.log(result);
-        if (result == ""){
-          SaveRegis(profile);
-        }
+        console.log("|||"+result+"|||");
+        //if (result == ""){
+			
+          //SaveRegis(profile,idToken,result[0].id);
+		  SaveRegis(profile,idToken,result);
+        //}
       },
     })
     .statusCode({
@@ -133,13 +135,8 @@
     });
   }
 
-  function SaveRegis(profile){
-
-		// day = $("#txtday").val();
-		// month= $("#txtmonth").val();
-		// year = $("#txtyear").val();
-    //txtbirthDate = year+'-'+month+'-'+day;
-		//base64img = $('#test_img').css("background-image");
+  function SaveRegis(profile,idToken,memid){
+		
 		const data = {
       img: '',
 		  username: profile.given_name,
@@ -156,7 +153,8 @@
 		  picture: profile.picture,
 		  sub: profile.sub,
 		  updated_at: profile.updated_at,
-		  id_token: profile.id_token
+		  id_token: idToken,
+		  memid: memid,
 		}
 
     $.ajax({
@@ -166,7 +164,6 @@
 		  data: data,
       contentType: "application/x-www-form-urlencoded;charset=UTF-8",
 		  success: function(result) {
-
         localStorage.setItem('profile', JSON.stringify(profile))
         locationHref('index.html');
 		  },
