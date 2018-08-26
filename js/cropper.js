@@ -16,7 +16,6 @@ var canvas  = $("#canvas"),
             reader.onload = function(evt) {
                var img = new Image()
                img.onload = function() {
-               console.log('img : ', img.height, img.width, img)
                 context.canvas.height = img.height;
                 context.canvas.width  = img.width;
                 context.drawImage(img, 0, 0);
@@ -41,6 +40,9 @@ var canvas  = $("#canvas"),
 
                img.src = evt.target.result
                img.id = 'mmii'
+               if (evt.target.result) {
+                 document.querySelector('.addHeader').style.display = 'none'
+               }
               //  $imgModal.attr('src', evt.target.result).css('width', 200)
               if (document.querySelector('#mmii')) {
                  $('#mmii').attr('src', '')
