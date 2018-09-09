@@ -632,8 +632,12 @@
 
   function oncheckInfoImg() {
     if (this.files && this.files[0]) {
-      const soure = `<img src="${URL.createObjectURL(this.files[0])}" />`
-      CKEDITOR.instances.des.insertHtml(soure)
+      var reader = new FileReader()
+      reader.onload = function(evt) {
+        const soure = `<img src="${evt.target.result}" />`
+        CKEDITOR.instances.des.insertHtml(soure)
+      }
+      reader.readAsDataURL(this.files[0])
       $('#labelImage').css('display', 'none')
       backgroundToggle('close') //test
     }
@@ -852,13 +856,13 @@
 
   const _onSaveContent = (postStatus) => {
     //_onUploadImage();// uploadimages
-	base64img = $('#picture').children('img').attr('src')
+	  base64img = $('#picture').children('img').attr('src')
     const data = {
       a: valueId('fieldInput'),
       b: CKEDITOR.instances.des.getData(),
       c: postStatus,
       d: $("#topicId").val(),
-	  img: encodeURIComponent(base64img)
+	    img: encodeURIComponent(base64img)
     }
     $.ajax({
       url: config.connectServer.post2Serv,
@@ -871,10 +875,9 @@
       },
     })
   }
+  
   const _onUploadImage = () => {
-
     base64img = $('#picture').children('img').attr('src')
-    
     $.ajax({
       url: config.connectServer.uploadimages,
       type: 'POST',
