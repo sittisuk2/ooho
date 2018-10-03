@@ -414,10 +414,10 @@
 
     <!-- <div class="straightLine"></div> -->
 
-    <div class="control-writing-mobile">
+    <div class="control-writing-mobile" style="display: flex; flex: 1; justify-content: space-around;">
       <div style="margin: 10px">
         <div class="flex" style="justify-content: center">
-          <a onclick="insertImage()"><img src="../../images/icon/insertPicture.png" alt=""></a>
+          <a onclick="insertImage()"><img class="imgSizeBottom" src="../../images/icon/insertPicture.png" alt=""></a>
         </div>
         <div style="text-align: center">
           <a onclick="insertImage()" class="font__bold"> Insert Picture</a>            
@@ -425,7 +425,7 @@
       </div>
       <div style="margin: 10px">
         <div class="flex" style="justify-content: center">
-          <a onclick="insertEmotion()"><img src="../../images/icon/smiling.png" alt=""></a>
+          <a onclick="insertEmotion()"><img class="imgSizeBottom" src="../../images/icon/smiling.png" alt=""></a>
         </div>
         <div style="text-align: center">
           <a onclick="insertEmotion()" class="font__bold"> Insert Emotion</a>        
@@ -433,19 +433,18 @@
       </div>
       <div style="margin: 10px">
         <div class="flex" style="justify-content: center">
-          <a onclick="insertPara()"><img src="../../images/icon/insertParagraph.png" alt=""></a>
+          <a onclick="insertPara()"><img class="imgSizeBottom" src="../../images/icon/insertParagraph.png" alt=""></a>
         </div>
         <div style="text-align: center">
-          <a onclick="insertPara()" class="font__bold"> Insert Paragraph Title</a>           
+          <a onclick="insertPara()" class="font__bold"> Insert Title</a>       
         </div>
       </div>
       <div style="margin: 10px">
         <div class="flex" style="justify-content: center">
-          <a onclick="_onSaveContent('0')"><img src="../../images/icon/saveDraft.png" alt=""></a>
+          <a onclick="_onSaveContent('0')"><img class="imgSizeBottom" src="../../images/icon/saveDraft.png" alt=""></a>
         </div>
         <div style="text-align: center">
           <a onclick="_onSaveContent('0')" class="font__bold"> Save Draft</a>
-          <p class="subfont__bold">14:14:48 Draft is saved automaticall</p>          
         </div>
       </div>
       <div class="flex" style="justify-content: center; align-items: center; margin-right: 10px">
@@ -454,114 +453,6 @@
         </button>
       </div>
     </div>
-
-    <!-- <div style="margin: 0 16px; display: none;">
-        <div class="columns" style="margin:0">
-            <div class="column is-4" style="padding:0">
-                <a onclick="insertImage()"><img src="../../images/icon/insertPicture.png" alt=""></a>
-            </div>
-            <div class="column is-8" style="padding:0">
-                <div style="margin-top: 10px">
-                    <a onclick="insertImage()" class="font__bold"> Insert Picture</a>
-                </div>
-            </div>
-            <input type="file" id="Thefile" style="display: none" />
-        </div>
-        <div id="labelImage" class="labelFeature">
-          <div class="arrow_box arrowColorGreen"></div>
-          <center>
-            <button
-              class="tooltip grean-lightgrean colorWhite"
-              style="
-                width: 50%;
-                margin-top: 3em;
-                cursor: pointer;
-                font-size: 20px;
-              "
-              onclick="performClick('Thefile')"
-            >
-              <b>Upload Your Image</b>
-            </button>
-            <p style="margin-top: 20px;font-size: 14px;">
-              Select the size of the image should be greater than 100 * 50, the size should be less than 30M
-              Press the Ctrl key to support multiple selection, add up to 100 pictures at a time
-            </p>
-          </center>
-        </div>
-
-        <div class="columns" style="margin:0">
-          <div class="column is-4" style="padding:0">
-              <a onclick="insertEmotion()"><img src="../../images/icon/smiling.png" alt=""></a>
-          </div>
-          <div class="column is-8" style="padding:0">
-            <div style="margin-top: 10px">
-              <a onclick="insertEmotion()" class="font__bold"> Insert Emotion</a>
-            </div>
-          </div>
-        </div>
-        <div id="labelEmotion" class="labelFeature">
-          <div class="arrow_box arrowColorOrange"></div>
-          <ul class="menuEmotion">
-            <li><a href="#!common" class="active" onclick="openEmo('Common')">Common</a></li>
-            <li><a href="#!charac" onclick="openEmo('Charac')">Character</a></li>
-            <li><a href="#!travel" onclick="openEmo('Travel')">Travel</a></li>
-          </ul>
-          <hr style="margin-top: 10px" />
-          <div class="contEmotion">
-            <div id="Common" class="emoGroup">
-                <div id="emojicon_common" style="width: 440px; font-size: 28px;"></div>
-            </div>
-            <div id="Charac" class="emoGroup" style="display: none">
-                <div id="emojicon_charac" style="width: 440px; font-size: 28px;"></div>
-            </div>
-            <div id="Travel" class="emoGroup" style="display: none">
-                <div id="emojicon_travel" style="width: 440px; font-size: 28px;"></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="columns" style="margin:0">
-          <div class="column is-4" style="padding:0">
-            <a onclick="insertPara()"><img src="../../images/icon/insertParagraph.png" alt=""></a>
-          </div>
-          <div class="column is-8" style="padding:0">
-            <div style="margin-top: 10px">
-              <a onclick="insertPara()" class="font__bold"> Insert Paragraph Title</a>
-            </div>
-          </div>
-        </div>
-        <div id="labelPara" class="labelFeature">
-          <div class="arrow_box arrowColorBlue"></div>
-          <input id="searchHeader" type="text" placeholder="Search Header ..." />
-          <div style="margin: 1em 1em" ></div>
-          <h6>Choose Your Style</h6>
-          <div style="margin: 1em 1em" ></div>
-          <label class="checkbox">
-            <input type="checkbox" id="checkboxed">
-            Remember me
-          </label>
-        </div>
-
-        <hr>
-
-        <div class="columns" style="margin:0">
-          <div class="column is-4" style="padding:0">
-              <a onclick="alert('Save Draft')"><img src="../../images/icon/saveDraft.png" alt=""></a>
-          </div>
-          <div class="column is-8" style="padding:0">
-            <div style="margin-top: 10px">
-              <a onclick="_onSaveContent('0')" class="font__bold"> Save Draft</a>
-              <p class="subfont__bold">14:14:48 Draft is saved automaticall</p>
-            </div>
-          </div>
-        </div>
-
-        <hr>
-
-        <button class="tooltip grean-lightgrean colorWhite" style="width:100%;cursor: pointer;font-size: 20px;" onclick="_onSaveContent('1')">
-            <i class="fa fa-globe" aria-hidden="true"></i>  <b>Post Travals</b>
-        </button>
-    </div> -->
   </body>
 </html>
 
@@ -577,7 +468,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cropper/2.3.3/cropper.js"></script>
 
 <script type="text/javascript">
-	
+  
+  // ===================== CKEDITOER ========================
   $(function() {
       _onLoadContent();
   });
@@ -610,6 +502,7 @@
       ],
   } );
 
+// ===================== form ========================
   window.onload = () => {
     Emojicon()
     $('#des').autosize()
@@ -622,8 +515,10 @@
     window.addEventListener('resize', function() {
       if (window.outerWidth >= 1024) {
         ele.style.display = 'none'
+        $(".control-writing-mobile").css('display', 'none')
       } else {
         ele.style.display = 'block'
+        $(".control-writing-mobile").css('display', 'flex')
         $(".space").addClass("column is-2")
         $(".control-writing").removeClass("column is-4")
       }
@@ -632,8 +527,12 @@
 
   function oncheckInfoImg() {
     if (this.files && this.files[0]) {
-      const soure = `<img src="${URL.createObjectURL(this.files[0])}" />`
-      CKEDITOR.instances.des.insertHtml(soure)
+      var reader = new FileReader()
+      reader.onload = function(evt) {
+        const soure = `<img src="${evt.target.result}" />`
+        CKEDITOR.instances.des.insertHtml(soure)
+      }
+      reader.readAsDataURL(this.files[0])
       $('#labelImage').css('display', 'none')
       backgroundToggle('close') //test
     }
@@ -718,6 +617,7 @@
   }
 
 
+// ===================== component menu for active ========================
   const getEleMenuActiveUser = (name, picture) => `
       <div class="hero-head">
         <nav class="navbar">
@@ -850,15 +750,18 @@
     return txt
   }
 
+// ===================== send to server ========================
+
   const _onSaveContent = (postStatus) => {
     //_onUploadImage();// uploadimages
-	base64img = $('#picture').children('img').attr('src')
+    alert('send data')
+	  base64img = $('#picture').children('img').attr('src')
     const data = {
       a: valueId('fieldInput'),
       b: CKEDITOR.instances.des.getData(),
       c: postStatus,
       d: $("#topicId").val(),
-	  img: encodeURIComponent(base64img)
+	    img: encodeURIComponent(base64img)
     }
     $.ajax({
       url: config.connectServer.post2Serv,
@@ -866,15 +769,14 @@
       data: data,
       success: function(result) {
         //console.log(result)
-        alert('save success!')
         $("#topicId").val(result);
+        alert('save success!')
       },
     })
   }
+  
   const _onUploadImage = () => {
-
     base64img = $('#picture').children('img').attr('src')
-    
     $.ajax({
       url: config.connectServer.uploadimages,
       type: 'POST',

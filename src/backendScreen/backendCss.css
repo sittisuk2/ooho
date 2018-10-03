@@ -232,6 +232,12 @@ input[type="checkbox"]:checked:before {
   display: none;
 }
 
+/* .imgSizeBottom {
+  width: 300px;
+  height: 300px;
+  background-color: yellow;
+} */
+
 
 @media screen and (max-width: 1024px) {
   .control-writing {
@@ -253,6 +259,10 @@ input[type="checkbox"]:checked:before {
   }
   .colorWhite {
     font-size: 10px;
+  }
+
+  .imgSizeBottom {
+    width: 30px;
   }
 }
 
