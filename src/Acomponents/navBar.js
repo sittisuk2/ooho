@@ -105,18 +105,19 @@ const TextTest = 'สปอร์ตจิตพิสัย ช็อคตั�
 
 const sliceText = (src) => src.slice(0, 166).concat('...')
 
-const getElementCardFunc = (id, title, viewCount, startTravel) => `
+const getElementCardFunc = (id, title, viewCount, startTravel,contentdata,cover) => `
 <div class="row">
   <div class="columns">
     <div class="column is-3">
       <figure class="image is-4by2">
-        <img src="images/blog/img-1.png" alt="Placeholder image">
+        <!--<img src="images/blog/img-1.png" alt="Placeholder image">-->
+		<img src="data:image/jpg;base64,${cover}" alt="Placeholder image" style = width:236px;>
       </figure>
     </div>
     <div class="column is-7">
       <div class="content">
         <a href="${ !accessToken() ? `../../login.html` : `src/topicScreen/topic.html#${id}`}"><h1 style="cursor: pointer">${title}</h1></a>
-        <p>${sliceText(TextTest)}</p>
+        <p>${sliceText(contentdata)}</p>
         <!-- <span><span><img src="images/icon/map-icon.png"/></span>  <a href="#!" class="underline">ถนนข้าวสาร</a></span> -->
       </div>
     </div>

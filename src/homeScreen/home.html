@@ -209,8 +209,9 @@
 <script type="text/javascript">
   window.onload = () => {
     document.getElementById('foo').innerHTML = Footer()
-    getPostData()
+    
     getProfile()
+    getPostData()
     dropdownMobile()
 
     const ele = document.querySelector('.signout')
@@ -347,12 +348,13 @@
 
   
 
-  const getElementCardFunc = (id, title, viewCount, startTravel) => `
+  const getElementCardFunc = (id, title, viewCount, startTravel,content,cover) => `
     <div class="card">
       <div class="card-image">
         <h2 class="textHeader">${getFormatDate(startTravel)}</h2>
         <figure class="image is-4by3">
-          <img src="http://www.thaifly.com/image/data/picture_acticle/picture_acticle_Australia/thaifly_Australia-7.jpg" alt="Placeholder image">
+          <!--<img src="http://www.thaifly.com/image/data/picture_acticle/picture_acticle_Australia/thaifly_Australia-7.jpg" alt="Placeholder image">-->
+          <img src="data:image/jpg;base64,${cover}" alt="Placeholder image">
         </figure>
       </div>
       <div class="card-content">
@@ -378,14 +380,20 @@
   `
 
   const getPostData = () => {
+    const profile = JSON.parse(localStorage.getItem('profile'))
+    //alert("sss"+profile.sub)
+    const data = {
+      sub: profile.sub
+    }
     $.ajax({
       url: config.connectServer.linkServ,
-      type: 'GET',
+      type: 'POST',
+      data: data,
       dataType: 'json',
       success: function(data) {
         console.log(data)
         let info = '';
-        data.forEach((d) => info+=getElementCardFunc(d.id, d.title, d.viewCount, d.startTravel))
+        data.forEach((d) => info+=getElementCardFunc(d.id, d.title, d.viewCount, d.startTravel,d.content,d.cover))
         document.getElementById('elementCard').innerHTML = info
       },
       error: function (xhr, ajaxOptions, thrownError) {
