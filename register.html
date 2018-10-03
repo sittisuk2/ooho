@@ -162,21 +162,25 @@
 		
 		txtbirthDate = year+'-'+month+'-'+day;
 		base64img = $('#test_img').css("background-image");
-		const data = {
-      img: encodeURIComponent(base64img),
-		  username: $("#username").val(),
-		  password: pass,
-		  nname: $("#nname").val(),
-		  email: $("#email").val(),
-		  tel: $("#tel").val(),
-		  birthDate: txtbirthDate,
-    }
+		
     
     webAuth.signup({
       connection: 'Username-Password-Authentication',
       email: $('#email').val(),
       password: pass
-    }, function (err) {
+    }, function (err,authResult) {
+      
+      const data = {
+        img: encodeURIComponent(base64img),
+        username: $("#username").val(),
+        password: pass,
+        nname: $("#nname").val(),
+        email: $("#email").val(),
+        tel: $("#tel").val(),
+        birthDate: txtbirthDate,
+        sub: 'auth0|'+authResult.Id,
+      }
+      
       if (err) return alert(`ข้อมูลซ้ำ ​!! : ${err.message}`)
       sendToServer(data)
       return alert('success signup !')
@@ -191,7 +195,7 @@
       contentType: "application/x-www-form-urlencoded;charset=UTF-8",
 		  success: function(result) {
         localStorage.setItem('profile', JSON.stringify(result[0]))
-        locationHref('login.html');
+        locationHref('index.html');
 		  },
 		})
   }
